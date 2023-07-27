@@ -48,6 +48,8 @@
     bottom: 0;
 }
 
+/* Queries */
+
 @media (width >= 45em) {
     .heroText > h1 {
         font-size: 3rem;

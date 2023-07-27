@@ -20,6 +20,8 @@
     background: -webkit-linear-gradient(90deg, rgba(203,66,148,1) 0%, rgba(208,143,23,1) 100%);
     -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
+
+   cursor: pointer;
 }
 
 .listWrapper {
@@ -48,6 +50,8 @@
     transition: color 200ms ;
 }
 
+/* Queries */
+
 @media (width >= 45em) {
     .container {
         max-width: 60em;
@@ -70,7 +74,6 @@
         font-weight: 600;
     }
 }
-
 
 @media (width >= 75em) {
     .container {
