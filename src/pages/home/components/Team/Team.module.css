@@ -6,9 +6,9 @@
     display: flex;
     flex-direction: column;
  
-    padding: 0 1em;
-    margin: auto;
     max-width: 40em;
+    padding: 0 1em;
+    margin: 0 auto 4em auto;
 }
 
 .teamText > div {
@@ -18,9 +18,13 @@
 .teamText > div > h2 {
     font-size: 2.25rem;
     margin-bottom: 1em;
+    text-align: center;
 }
 
 .teamText > div > p {
+    max-width: 40ch;
+    margin: auto;
+
     font-size: 1.25rem;
 
     line-height: 1.5em;
@@ -34,6 +38,8 @@
     -webkit-text-fill-color: transparent;
 }
 
+/* Queries */
+
 @media (width >= 75em) {
     .teamContainer {
         padding: 15em 0;
@@ -44,6 +50,8 @@
         flex-wrap: wrap;
 
         max-width: 80em;
+        
+        margin-bottom: 12em;
     }
 
     .teamText > div:first-of-type {
@@ -60,6 +68,7 @@
         margin-left: .65em;
         
         font-size: 3rem;
+        text-align: start;
     }
 
     .teamText > div > p {
