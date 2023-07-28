@@ -1,4 +1,4 @@
-import heroVideo from "../../../../videos/PunkJuice.mov";
+import heroVideo from "../../../../assets/videos/PunkJuice.mov";
 import styles from "./Hero.module.css";
 
 function Hero() {

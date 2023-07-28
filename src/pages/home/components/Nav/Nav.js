@@ -18,6 +18,12 @@ function Nav() {
 
             <li>
               <a className={`${styles.link}`} href="#portfolio">
+                Our Team
+              </a>
+            </li>
+
+            <li>
+              <a className={`${styles.link}`} href="#portfolio">
                 Product
               </a>
             </li>

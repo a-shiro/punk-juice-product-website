@@ -6,7 +6,13 @@ body {
     font-family: Montserrat, sans-serif;
 }
 
-body, h1, p, ul{
+body,
+h1,
+h2,
+h3,
+p,
+ul 
+{
     padding: 0;
     margin: 0;
 }

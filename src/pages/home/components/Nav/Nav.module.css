@@ -56,23 +56,6 @@
     .container {
         max-width: 60em;
     }
-
-    .hamburger {
-        display: none;
-    }
-
-    .listWrapper {
-        display: block;
-    }
-
-    .navbarList > li {
-        margin: 0 1em;
-    }
-
-    .navbarList > li > a {
-        font-size: 1.15rem;
-        font-weight: 600;
-    }
 }
 
 @media (width >= 75em) {
@@ -84,7 +67,22 @@
         padding: 1.55em;
     }
 
+    .hamburger {
+        display: none;
+    }
+
+    .listWrapper {
+        display: block;
+    }
+
     .navbarList > li {
+        margin: 0 1em;
+
         font-size: 1.5rem;
+    }
+
+    .navbarList > li > a {
+        font-size: 1.15rem;
+        font-weight: 600;
     }
 }
