@@ -1,0 +1,82 @@
+.footer {
+    background-color: #212529;
+
+    padding: 5em 1em 2em 1em;
+
+}
+
+.title {
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 1.500rem;
+    font-weight: 500;
+
+    margin-bottom: 1em;
+}
+
+.titleIcon, .socialIcon {
+    width: 25px;
+    display: block;
+}
+
+.titleIcon {
+    margin-right: .250em;
+
+}
+
+.socialIcon {
+    margin-right: .750em;
+}
+
+.mail, .copyright {
+    color: #FFFFFFA6;
+    font-size: 1.150rem;
+}
+
+.mail {
+    cursor: pointer;
+
+    transition: color 500ms;
+}
+
+.mail:hover {
+    color: white;
+
+    transition: color 500ms;
+}
+
+.copyright {
+    text-align: center;
+    margin: 4em 0 0 0;
+}
+
+
+.socialsList {
+    display: flex;
+
+    list-style: none;
+
+    margin-top: 3em;
+}
+
+@media (width >= 45em) {
+    .container {
+        max-width: 50em;
+        margin: auto;
+    }
+}
+
+@media (width >= 75em) {
+    .container {
+        max-width: 70em;
+    }
+}
+
+@media (width >= 95em) {
+    .container {
+        max-width: 90em;
+    }
+}
