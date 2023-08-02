@@ -1,9 +1,10 @@
-import styles from "./Home.module.css";
 import Hero from "./components/Hero/Hero";
 import Nav from "./components/Nav/Nav";
 import Team from "./components/Team/Team";
 import Product from "./components/Product/Product";
 import Articles from "./components/Articles/Articles";
+import ContactForm from "./components/ContactForm/ContactForm";
+import Map from "./components/Map/Map";
 
 function Home() {
   return (
@@ -17,6 +18,10 @@ function Home() {
       <Product />
 
       <Articles />
+
+      <ContactForm />
+
+      <Map />
     </main>
   );
 }
