@@ -1,4 +1,4 @@
-.contactSection {
+.sectionContainer {
     padding: 5em 1em;
 }
 
@@ -81,13 +81,13 @@
 }
 
 .formField:focus,
-.textWrapper >textarea:focus {
+.textWrapper > textarea:focus {
     border: 1px solid rgba(203,66,148,1);
     box-shadow: 0 0 0 5px rgb(255, 148, 212);
     outline: none;
 }
  
-.buttonWrapper {
+.buttonContainer {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -95,7 +95,7 @@
     margin-top: 4em;
 }
 
-.buttonWrapper > button {
+.buttonContainer > button {
     width: 100%;
     padding: .800em;
 
@@ -112,21 +112,30 @@
     border-radius: 2em;
     
     cursor: pointer;
+
+    transition: box-shadow 300ms, transform 300ms;
+}
+
+.buttonContainer > button:focus {
+    transform: scale(1.020);
+    transition: box-shadow 300ms, transform 300ms;
+    box-shadow: 0 5px 15px 0px rgb(196, 196, 196);
+    outline: none;
 }
 
 @media (width >= 75em) {
-    .buttonWrapper > button {
+    .sectionContainer {
+        padding: 10em 1em;
+    }
+    
+    .title {
+        margin-bottom: 1.500em;
+        font-size: 2.800rem;
+    }
+
+    .buttonContainer > button {
         max-width: 20em;
         padding: 1em;
     }
 }
-@media (width >= 95em) {
-    .contactSection {
-        padding: 10em 1em;
-    }
 
-    .title {
-        margin-bottom: 1.500em;
-        font-size: 2.75rem;
-    }
-}
