@@ -1,10 +1,11 @@
 .poster {
     width: 100%;
     max-height: 600px;
-    object-fit: cover;
-    object-position: 0 15%;
 
     display: block;
+   
+    object-fit: cover;
+    object-position: 0 15%;
 }
 
 .textContainer {
@@ -27,12 +28,12 @@
     margin: 1em 0;
 }
 
-.textContainer > div {
+.linkContainer {
     display: flex;
     flex-direction: column;
 }
 
-.textContainer > div > a {
+.linkContainer > a {
     color: white;
     
     font-weight: 600;
@@ -58,39 +59,42 @@
     object-position: top;
 }
 
-.memberDetails {
-    background: -webkit-linear-gradient(130deg, rgba(203,66,148,1) 0%, rgba(208,143,23,1) 100%);
-    color: white;
-
+.teamDetailsContainer {
     width: 100%;
     padding: 1.5em;
+    
+    background: -webkit-linear-gradient(75deg, rgba(203,66,148,1) 0%, rgba(208,143,23,1) 100%);
+    color: white;
 
     position: absolute;
     bottom: 0;
 }
 
-.memberDetails > h3 {
-    font-size: 2rem;
+.teamDetailsContainer > h3 {
+    font-size: 1.750rem;
     margin-bottom: .250em;
 }
 
-.memberDetails > p {
-    font-size: 1.20rem;
+.teamDetailsContainer > p {
+    font-size: 1rem;
+    margin: 0;
 }
 
 .carouselControlNext,
 .carouselControlPrev {
-    background-color: rgba(0, 0, 0, .5);
-    
-    display: flex;
-    
     padding: 1em;
 
+    display: flex;
+    
     position:  absolute;
-    bottom: 2.700em;
+    bottom: 2em;
+
+    background-color: rgba(0, 0, 0, .5);
     
     border: none;
     border-radius: 100%;
+
+    cursor: pointer;
 }
 
 .carouselControlNext > img,
@@ -99,7 +103,7 @@
 }
 
 .carouselControlPrev {
-    right: 6em;
+    right: 6.500em;
     transform: scaleX(-1);
 }
 
@@ -107,18 +111,19 @@
     right: 2em;
 }
 
+/* Queries */
 @media (width >= 75em) {
     .aboutContainer {
         display: flex;
     }
     
-    .posterWrapper {
+    .posterContainer {
         width: 28%;
     }
     
     .poster {
         min-height: 100%;
-        object-fit: cover;
+        object-position: inherit;
     }
   
     .textContainer {
@@ -131,5 +136,20 @@
 
     .carousel {
         width: 55%;
+    }
+
+    .teamDetailsContainer > h3 {
+        font-size: 2rem;
+        margin-bottom: .250em;
+    }
+
+    .teamDetailsContainer > p {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    .carouselControlNext,
+    .carouselControlPrev {
+        bottom: 2.500em;
     }
 }

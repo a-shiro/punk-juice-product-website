@@ -1,12 +1,12 @@
 import styles from "./About.module.css";
 import poster from "../../../../../../assets/images/poster_1.jpg";
 import stockPhoto1 from "../../../../../../assets/images/person2.jpg";
-import arrowIcon from "../../../../../../assets/images/arrow.png";
+import arrowIcon from "../../../../../../assets/icons/arrow.png";
 
 function About() {
   return (
     <div class={styles.aboutContainer}>
-      <div className={styles.posterWrapper}>
+      <div className={styles.posterContainer}>
         <img className={styles.poster} src={poster} alt="poster" />
       </div>
 
@@ -15,7 +15,7 @@ function About() {
 
         <p>Over five years in the production business</p>
 
-        <div>
+        <div className={styles.linkContainer}>
           <a href="#news">Read News & Events</a>
 
           <a href="#contact">Work with Us</a>
@@ -23,16 +23,15 @@ function About() {
       </div>
 
       <div className={styles.carousel}>
-        <div class="carousel-item active">
+        <div>
           <img
             src={stockPhoto1}
             className={styles.teamPhoto}
             alt="art-director"
           />
 
-          <div class={styles.memberDetails}>
+          <div class={styles.teamDetailsContainer}>
             <h3>Kelly B.</h3>
-
             <p>Art Director</p>
           </div>
         </div>
