@@ -1,4 +1,4 @@
-.articlesSection {
+.sectionContainer {
     background-color: #f9f9f9;
 
     padding: 5em 0;
@@ -11,46 +11,49 @@
     font-size: 2.250rem;
 }
 
-.articlesWrapper {
-    display: flex;
-    flex-direction: column;
-}
-
-.articlesWrapper > div {
+.articlesContainer {
     display: flex;
     flex-direction: column;
 
     padding: 1em;
 }
 
-.secondaryWrapper {
+.secondaryContainer {
     max-width: 35em;
     margin: auto;
 }
 
 @media (width >= 75em) {
-    .articlesWrapper {
-        justify-content: center;
-        flex-direction: row;
-
-        max-width: 95em;
-    }
-
-    .secondaryWrapper {
-        margin: 0;
-    }
-}
-
-@media (width >= 95em) {
-    .articlesWrapper { 
-        margin: auto;
-    }
-
-    .secondaryWrapper {
-        max-width: 42em;
+    .sectionContainer {
+        padding: 10em 0;
     }
 
     .titleContainer > h2 {
         font-size: 3rem;
+    }
+
+    .articlesContainer {
+        max-width: 70em;
+        margin: auto;
+
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+    .secondaryContainer {
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (width >= 95em) {
+    .articlesContainer { 
+        max-width: 90em;
+    }
+
+    .secondaryContainer {
+        max-width: 42em;
     }
 }

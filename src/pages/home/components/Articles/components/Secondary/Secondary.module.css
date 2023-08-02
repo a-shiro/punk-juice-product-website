@@ -8,15 +8,8 @@
 
 .articleImage {
     width: 100%;
-
     display: block;
-
-    transition: transform 800ms;
-}
-
-.articleImage:hover {
-    transform: scale(1.030);
-    transition: transform 800ms;
+    cursor: pointer;
 }
 
 .articleTag {
@@ -34,16 +27,25 @@
     padding: 1em;
 }
 
-.articleTitleContainer {
+.titleContainer {
     margin-bottom: 1.500em;
+    cursor: pointer;
 }
 
-.articleTitleContainer > a {
+.titleContainer > a {
     color: #717275;
 
     font-size: 1.200rem;
     font-weight: 600;
     text-decoration: none;
+
+    transition: color 300ms;
+}
+
+.titleContainer > a:hover {
+    color: black;
+
+    transition: color 300ms;
 }
 
 .infoContainer > span {
@@ -60,7 +62,7 @@
     }
     
     .articleImage {
-        width: 14.800em;
+        width: 15.800em;
     }
 
     .infoContainer {
@@ -70,7 +72,7 @@
 
 @media (width >= 95em) {
     .articleImage {
-        width: 18.300em;
+        width: 18.800em;
     }
 
     .infoContainer {

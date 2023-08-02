@@ -15,7 +15,7 @@ function Secondary() {
       <div className={styles.articleTag}>Events</div>
 
       <div className={styles.infoContainer}>
-        <h5 className={styles.articleTitleContainer}>
+        <h5 className={styles.titleContainer}>
           <a>Job Opportunities: Digital, Marketing</a>
         </h5>
 

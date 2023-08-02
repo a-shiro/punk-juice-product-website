@@ -4,15 +4,15 @@ import styles from "./Articles.module.css";
 
 function Articles() {
   return (
-    <section className={styles.articlesSection}>
+    <section className={styles.sectionContainer}>
       <div className={styles.titleContainer}>
         <h2>News & Events</h2>
       </div>
 
-      <div className={styles.articlesWrapper}>
+      <div className={styles.articlesContainer}>
         <Main />
 
-        <div className={styles.secondaryWrapper}>
+        <div className={styles.secondaryContainer}>
           <Secondary />
           <Secondary />
         </div>

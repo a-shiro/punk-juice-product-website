@@ -3,7 +3,7 @@ import styles from "./Main.module.css";
 
 function Main() {
   return (
-    <div className={styles.articleContainer}>
+    <div className={styles.mainContainer}>
       <a>
         <img
           src={articleImage}
@@ -15,7 +15,7 @@ function Main() {
       <div className={styles.articleTag}>News</div>
 
       <div className={styles.infoContainer}>
-        <h5 className={styles.articleTitleContainer}>
+        <h5 className={styles.titleContainer}>
           <a>Punk Juice is taking the market by storm</a>
         </h5>
 
