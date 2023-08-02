@@ -6,8 +6,8 @@ import styles from "./Product.module.css";
 
 function Product() {
   return (
-    <section>
-      <div className={styles.titleWrapper}>
+    <section className={styles.sectionContainer}>
+      <div className={styles.titleContainer}>
         <h2>Product</h2>
       </div>
 
