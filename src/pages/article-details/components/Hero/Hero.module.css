@@ -1,0 +1,76 @@
+.heroContainer {
+    position: relative;
+}
+
+.heroText {
+    color: #fff;
+
+    position: absolute;
+
+    text-align: center;
+    
+    left: 50%;
+    top: 50%;
+
+    width: 100%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+}
+
+.heroText > h1 {
+    margin: .5em 0 .25em 0;
+    font-size: 2rem;
+}
+
+.heroText > p {
+    font-size: 1rem;
+}
+
+.heroText > p > strong {
+    border-bottom: 2px solid white;
+    padding-bottom: 2px;
+}
+
+.imageContainer > img {
+    width: 100%;
+}
+
+.heroOverlay {
+    background: linear-gradient(to top, rgb(21, 21, 21), transparent 95%);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/* Queries */
+
+@media (width >= 45em) {
+    .heroText > h1 {
+        font-size: 3rem;
+    }
+
+    .heroText > p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (width >= 75em) {
+    .imageContainer {
+        overflow: hidden;
+    }
+
+    .imageContainer > img {
+        width: 100vw;
+        height: 91vh;
+        object-fit: cover;
+    }
+
+    .heroText > h1 {
+        font-size: 4.5rem;
+    }
+}

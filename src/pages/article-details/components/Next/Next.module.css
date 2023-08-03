@@ -1,0 +1,43 @@
+.sectionContainer {
+    background-color: #f9f9f9;
+
+    padding: 6em 1em;
+}
+
+.container {
+    text-align: center;
+}
+
+.container > span {
+    font-size: 1.250rem;
+    color: #212529;
+}
+
+.container > h3 {
+    margin-top: .500em;
+
+    font-size: 1.650rem;
+    color: #565758;
+
+    cursor: pointer;
+    transition: color 300ms;
+}
+
+.container > h3:hover {
+    color: #212529;
+    transition: color 300ms;
+}   
+
+@media (width >= 75em) {
+    .sectionContainer {
+        padding: 10em 0;
+    }
+
+    .container > span {
+        font-size: 1.500rem;
+    }
+
+    .container > h3 {
+        font-size: 2.250rem;
+    }
+}

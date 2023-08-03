@@ -1,0 +1,54 @@
+.sectionContainer {
+    padding: 5em 1em;
+}
+
+.container {
+    max-width: 55ch;
+    margin: auto;
+}
+
+.title {
+    font-size: 2.250rem;
+}
+
+.sectionContainer p {
+    font-size: 1.250rem;
+    line-height: 1.500em;
+    color: #717275;
+
+}
+
+.imageContainer > img {
+    width: 100%;
+    display: block;
+}
+
+@media (width >= 45em) {
+    .imageContainer {
+        display: flex;
+    }
+
+    .imageContainer > img {
+        width: 50%;
+        height: 100%;
+        margin-left: 1em;
+    }
+
+    .imageContainer p {
+        margin: 0;
+    }
+}
+
+@media (width >= 75em) {
+    .sectionContainer {
+        padding: 10em 0;
+    }
+
+    .container {
+        max-width: 80ch;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
