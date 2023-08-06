@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
 import styles from "./Next.module.css";
 
-function Next() {
+function Next({ path }) {
   return (
     <section className={styles.sectionContainer}>
       <div className={styles.container}>
         <span>Next article</span>
 
         <h3>
-          <a>Job Opportunities - Digital Marketing</a>
+          <Link to={`/article-details/${path}`}>
+            Job Opportunities - Digital Marketing
+          </Link>
         </h3>
       </div>
     </section>

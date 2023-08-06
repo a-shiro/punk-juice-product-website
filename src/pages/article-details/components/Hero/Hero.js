@@ -1,17 +1,16 @@
 import "./Hero.module.css";
 import styles from "./Hero.module.css";
-import heroImage from "../../../../assets/images/bottles_3.png";
 
-function Hero() {
+function Hero({ article }) {
   return (
     <section className={styles.heroContainer}>
       <div className={styles.heroText}>
-        <h1>Article Title</h1>
-        <p>article subtitle</p>
+        <h1>{article?.heroTitle}</h1>
+        <p>{article?.heroSubtitle}</p>
       </div>
 
       <div className={styles.imageContainer}>
-        <img src={heroImage} />
+        <img src={article?.heroImage} />
       </div>
 
       <div className={styles.heroOverlay}></div>
