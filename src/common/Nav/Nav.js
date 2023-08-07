@@ -9,7 +9,7 @@ function Nav() {
         <button className={styles.hamburger}>X</button>
 
         <div className={styles.listWrapper}>
-          <ul class={styles.navbarList}>
+          <ul className={styles.navbarList}>
             <li>
               <a className={`${styles.link} ${styles.active}`} href="#hero">
                 Home
