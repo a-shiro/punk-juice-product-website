@@ -17,15 +17,20 @@
     transform: translate(-50%, -50%);
 
     z-index: 10;
+    overflow: hidden;
 }
 
 .heroText > h1 {
-    margin: .5em 0 .25em 0;
+    margin: 2.25em 0 .25em 0;
     font-size: 2rem;
+    
+    animation: pop-up .340s 1.2s ease-out both;
 }
 
 .heroText > p {
+    margin-bottom: 5em;
     font-size: 1rem;
+    animation: fade-up .340s 1.4s ease-out both;
 }
 
 .heroText > p > strong {
@@ -74,4 +79,14 @@
     .heroText > h1 {
         font-size: 4.5rem;
     }
+}
+
+@keyframes fade-up {
+    0%{transform: translateY(100px); opacity: 0}
+    100%{transform: translateY(0); opacity: 1}
+}
+
+@keyframes pop-up {
+    0%{transform: scale(.6); opacity: 0}
+    100%{transform: scale(1.1); opacity: 1}
 }
