@@ -1,26 +1,25 @@
 import styles from "./Article.module.css";
-import articleImage from "../../../../assets/images/billboard_mockup.jpg";
+import Paragraph from "./components/Paragraph";
 
 function Article({ article }) {
   return (
     <section className={styles.sectionContainer}>
       <div className={styles.container}>
-        <h2 className={styles.title}>{article?.textTitle}</h2>
-
         <div>
-          <p>{article?.textArray[0]}</p>
-          <p>{article?.textArray[1]}</p>
+          <h2 className={styles.title}>{article?.textTitle}</h2>
         </div>
 
-        <div className={styles.imageContainer}>
-          <p>{article?.textArray[2]} </p>
-          <img src={article?.textImage} alt="article-image" />
-        </div>
-
-        <div>
-          <p>{article?.textArray[3]}</p>
-          <p>{article?.textArray[4]}</p>
-          <p>{article?.textArray[5]}</p>
+        <div id="paragraphs">
+          {article?.textArray.map((text, index) => {
+            return (
+              <Paragraph
+                text={text}
+                image={article.textImage}
+                paragraphIndex={index}
+                key={index}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
