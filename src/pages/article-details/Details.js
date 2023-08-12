@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import styles from "./Details.module.css";
+import SkeletonOverlay from "../../common/components/SkeletonOverlay/SkeletonOverlay";
 import useGetPageResources from "./hooks/useGetPageResources";
 import useSkeletonLoading from "../../common/hooks/useSkeletonLoading";
 import Hero from "./components/Hero/Hero";
@@ -12,12 +12,10 @@ function Details() {
   const [article, nextArticle] = useGetPageResources(currentPath);
   const skeletonLoading = useSkeletonLoading(currentPath);
 
-  console.log(skeletonLoading || article === null);
-
   return (
     <main>
       {skeletonLoading || article === null ? (
-        <div className={styles.pageCover}>Loading...</div>
+        <SkeletonOverlay />
       ) : (
         <div>
           <Hero article={article} />
