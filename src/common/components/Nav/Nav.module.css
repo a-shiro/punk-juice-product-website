@@ -19,7 +19,9 @@
     margin: auto;
 }
 
-.container > a {
+.brand {
+    margin-left: .500em;
+
     font-size: 1.5rem;
     font-weight: 800;
 
@@ -58,12 +60,6 @@
 
 /* Queries */
 
-@media (width >= 45em) {
-    .container {
-        max-width: 60em;
-    }
-}
-
 @media (width >= 75em) {
     .container {
         max-width: 80em;
@@ -73,8 +69,8 @@
         padding: 1.55em;
     }
 
-    .hamburger {
-        display: none;
+    .brand {
+        margin-left: 0
     }
 
     .listWrapper {

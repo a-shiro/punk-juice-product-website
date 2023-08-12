@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
+import Hamburger from "./Hamburger";
 
 function Nav() {
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
-        <a>Punk Juice</a>
+        <Link to="/" className={styles.brand}>
+          Punk Juice
+        </Link>
 
-        <button className={styles.hamburger}>X</button>
+        <Hamburger />
 
         <div className={styles.listWrapper}>
           <ul className={styles.navbarList}>
