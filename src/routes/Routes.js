@@ -6,7 +6,7 @@ function RoutesManager() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/article-details" element={<Details />} />
+      <Route path="/article-details/:articleName" element={<Details />} />
     </Routes>
   );
 }

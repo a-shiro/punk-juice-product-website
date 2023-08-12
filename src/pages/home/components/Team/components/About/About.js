@@ -5,7 +5,7 @@ import arrowIcon from "../../../../../../assets/icons/arrow.png";
 
 function About() {
   return (
-    <div class={styles.aboutContainer}>
+    <div className={styles.aboutContainer}>
       <div className={styles.posterContainer}>
         <img className={styles.poster} src={poster} alt="poster" />
       </div>
@@ -30,7 +30,7 @@ function About() {
             alt="art-director"
           />
 
-          <div class={styles.teamDetailsContainer}>
+          <div className={styles.teamDetailsContainer}>
             <h3>Kelly B.</h3>
             <p>Art Director</p>
           </div>
