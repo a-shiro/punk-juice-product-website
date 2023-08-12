@@ -9,33 +9,27 @@
 
 .title {
     font-size: 2.250rem;
+    transform: translateY(150px);
 }
 
 .sectionContainer p {
     font-size: 1.250rem;
     line-height: 1.500em;
     color: #717275;
-
+    transform: translateY(150px);
 }
 
-.imageContainer > img {
+.articleImage {
     width: 100%;
     display: block;
 }
 
 @media (width >= 45em) {
-    .imageContainer {
-        display: flex;
-    }
-
-    .imageContainer > img {
+    .articleImage {
         width: 50%;
         height: 100%;
-        margin-left: 1em;
-    }
-
-    .imageContainer p {
-        margin: 0;
+        margin: 1em;
+        float: right;
     }
 }
 
@@ -51,4 +45,23 @@
     .title {
         font-size: 3rem;
     }
+}
+
+.fadeAnimationIn {
+    animation: fade-in .500s ease-in-out both;
+}
+
+.fadeAnimationOut {
+    animation: fade-out .500s ease-in-out both;
+}
+
+
+@keyframes fade-in {
+    0%{transform: translateY(150px); opacity: 0;}
+    100%{transform: translateY(0); opacity: 1;}
+}
+
+@keyframes fade-out {  
+    0%{transform: translateY(0); opacity: 1;}
+    100%{transform: translateY(150px); opacity: 0;}
 }

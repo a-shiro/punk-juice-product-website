@@ -5,13 +5,11 @@ function Hero({ article }) {
   return (
     <section className={styles.heroContainer}>
       <div className={styles.heroText}>
-        <h1>{article?.heroTitle}</h1>
-        <p>{article?.heroSubtitle}</p>
+        <h1>{article.heroTitle}</h1>
+        <p>{article.heroSubtitle}</p>
       </div>
 
-      <div className={styles.imageContainer}>
-        <img src={article?.heroImage} />
-      </div>
+      <img className={styles.heroImage} src={article?.heroImage} />
 
       <div className={styles.heroOverlay}></div>
     </section>

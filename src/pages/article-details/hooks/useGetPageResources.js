@@ -12,7 +12,7 @@ function getNextArticle(articles, currentArticle) {
     : articles[nextArticleIndex];
 }
 
-export function useGetPageResources(urlPath) {
+function useGetPageResources(urlPath) {
   const [currentArticle, setCurrentArticle] = useState(null);
   const [nextArticle, setNextArticle] = useState(null);
 
@@ -30,5 +30,10 @@ export function useGetPageResources(urlPath) {
     requestArticles();
   }, [urlPath]);
 
+  // Figure out this scroll to
+  window.scrollTo(0, 0);
+
   return [currentArticle, nextArticle];
 }
+
+export default useGetPageResources;

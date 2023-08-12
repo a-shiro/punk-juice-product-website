@@ -1,32 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import styles from "../Article.module.css";
+import useToggleAnimation from "../../../hooks/useToggleAnimation";
 
 function Paragraph({ text, image, paragraphIndex }) {
   const paragraphRef = useRef();
-  const [entryVisible, setEntryVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-
-        if (entry.boundingClientRect.y >= 0) {
-          setEntryVisible(entry.isIntersecting);
-        }
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    observer.observe(paragraphRef.current);
-  }, []);
+  const elementVisible = useToggleAnimation(paragraphRef);
 
   return (
     <div ref={paragraphRef}>
       <p
         className={
-          entryVisible ? styles.fadeAnimationIn : styles.fadeAnimationOut
+          elementVisible ? styles.fadeAnimationIn : styles.fadeAnimationOut
         }
       >
         {text}
@@ -34,7 +18,7 @@ function Paragraph({ text, image, paragraphIndex }) {
       {paragraphIndex === 2 && (
         <img
           className={`${styles.articleImage} ${
-            entryVisible ? styles.fadeAnimationIn : styles.fadeAnimationOut
+            elementVisible ? styles.fadeAnimationIn : styles.fadeAnimationOut
           }`}
           src={image}
           alt="article-image"
