@@ -1,25 +1,29 @@
-import articleImage from "../../../../../../assets/images/bottles_3.png";
+import { Link } from "react-router-dom";
 import styles from "./Main.module.css";
 
-function Main() {
+function Main({ article }) {
+  const articlePath = `/article-details/${article.path}`;
+
   return (
     <div className={styles.mainContainer}>
-      <a>
+      <Link to={articlePath} state={article}>
         <img
-          src={articleImage}
+          src={article.thumbnail}
           className={styles.articleImage}
           alt="article-thumbnail"
         />
-      </a>
+      </Link>
 
-      <div className={styles.articleTag}>News</div>
+      <div className={styles.articleTag}>{article.type}</div>
 
       <div className={styles.infoContainer}>
         <h5 className={styles.titleContainer}>
-          <a>Punk Juice is taking the market by storm</a>
+          <Link to={articlePath} state={article}>
+            {article.heroTitle}
+          </Link>
         </h5>
 
-        <span class="text-muted">22 hours ago</span>
+        <span>22 hours ago</span>
       </div>
     </div>
   );

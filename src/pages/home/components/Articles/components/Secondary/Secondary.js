@@ -1,22 +1,24 @@
-import articleImage from "../../../../../../assets/images/billboard_mockup.jpg";
+import { Link } from "react-router-dom";
 import styles from "./Secondary.module.css";
 
-function Secondary() {
+function Secondary({ article }) {
+  const articlePath = `/article-details/${article.path}`;
+
   return (
     <div className={styles.articleContainer}>
-      <a>
+      <Link to={articlePath}>
         <img
-          src={articleImage}
+          src={article.thumbnail}
           className={styles.articleImage}
           alt="article-thumbnail"
         />
-      </a>
+      </Link>
 
-      <div className={styles.articleTag}>Events</div>
+      <div className={styles.articleTag}>{article.type}</div>
 
       <div className={styles.infoContainer}>
         <h5 className={styles.titleContainer}>
-          <a>Job Opportunities: Digital, Marketing</a>
+          <Link to={articlePath}>{article.heroTitle}</Link>
         </h5>
 
         <span>August 6, 2021</span>

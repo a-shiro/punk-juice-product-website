@@ -1,22 +1,41 @@
+import { useEffect, useState } from "react";
+import { fetchData } from "../../../../services/queries";
+import styles from "./Articles.module.css";
 import Main from "./components/Main/Main";
 import Secondary from "./components/Secondary/Secondary";
-import styles from "./Articles.module.css";
 
 function Articles() {
+  const [articles, setArticles] = useState(null);
+
+  // Use custom hook to clean up
+
+  useEffect(() => {
+    const getArticles = async () => {
+      const data = await fetchData("articles");
+      setArticles(data);
+    };
+
+    getArticles();
+  }, []);
+
   return (
     <section className={styles.sectionContainer}>
       <div className={styles.titleContainer}>
         <h2>News & Events</h2>
       </div>
 
-      <div className={styles.articlesContainer}>
-        <Main />
+      {articles ? (
+        <div className={styles.articlesContainer}>
+          <Main article={articles[0]} />
 
-        <div className={styles.secondaryContainer}>
-          <Secondary />
-          <Secondary />
+          <div className={styles.secondaryContainer}>
+            <Secondary article={articles[1]} />
+            <Secondary article={articles[2]} />
+          </div>
         </div>
-      </div>
+      ) : (
+        <h1>Loading Skeleton</h1>
+      )}
     </section>
   );
 }
