@@ -1,10 +1,10 @@
 import styles from "./Footer.module.css";
-import locationIcon from "../../assets/icons/location.png";
-import youtubeIcon from "../../assets/icons/youtube.png";
-import facebookIcon from "../../assets/icons/facebook.png";
-import twitterIcon from "../../assets/icons/twitter.png";
-import whatsappIcon from "../../assets/icons/whatsapp.png";
-import instagramIcon from "../../assets/icons/instagram.png";
+import locationIcon from "../../../assets/icons/location.png";
+import youtubeIcon from "../../../assets/icons/youtube.png";
+import facebookIcon from "../../../assets/icons/facebook.png";
+import twitterIcon from "../../../assets/icons/twitter.png";
+import whatsappIcon from "../../../assets/icons/whatsapp.png";
+import instagramIcon from "../../../assets/icons/instagram.png";
 
 function Footer() {
   return (
