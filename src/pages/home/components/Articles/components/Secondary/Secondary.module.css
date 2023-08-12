@@ -2,10 +2,6 @@
     position: relative;
 }
 
-.articleContainer > a {
-    overflow: hidden;
-}
-
 .articleImage {
     width: 100%;
     display: block;
@@ -63,6 +59,8 @@
     
     .articleImage {
         width: 15.800em;
+        min-height: 11em;
+        max-height: 11em;
     }
 
     .infoContainer {
@@ -73,6 +71,8 @@
 @media (width >= 95em) {
     .articleImage {
         width: 18.800em;
+        min-height: 13em;
+        max-height: 13em;
     }
 
     .infoContainer {
