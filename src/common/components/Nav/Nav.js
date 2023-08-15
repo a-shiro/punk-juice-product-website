@@ -1,44 +1,31 @@
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
-import Hamburger from "./Hamburger";
+import MobileDropdown from "./components/MobileDropdown/MobileDropdown";
+import Hamburger from "./components/Hamburger/Hamburger";
+import { useEffect, useState } from "react";
+import DesktopDropdown from "./components/DesktopDropdown/DesktopDropdown";
 
 function Nav() {
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  console.log("rerender");
+
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
+
+  //  use a context maybe
+
   return (
-    <nav className={styles.nav}>
+    <nav onClick={toggleDropdown} className={styles.nav}>
       <div className={styles.container}>
         <Link to="/" className={styles.brand}>
           Punk Juice
         </Link>
 
-        <Hamburger />
+        <Hamburger toggleDropdown={toggleDropdown} />
 
-        <div className={styles.listWrapper}>
-          <ul className={styles.navbarList}>
-            <li>
-              <a className={`${styles.link} ${styles.active}`} href="#hero">
-                Home
-              </a>
-            </li>
-
-            <li>
-              <a className={`${styles.link}`} href="#portfolio">
-                Our Team
-              </a>
-            </li>
-
-            <li>
-              <a className={`${styles.link}`} href="#portfolio">
-                Product
-              </a>
-            </li>
-
-            <li>
-              <a className={`${styles.link}`} href="#news">
-                News & Events
-              </a>
-            </li>
-          </ul>
-        </div>
+        <MobileDropdown visible={dropdownVisible} />
+        <DesktopDropdown />
       </div>
     </nav>
   );

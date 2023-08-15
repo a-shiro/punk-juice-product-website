@@ -13,6 +13,7 @@ h1 {
 .container {
     position: absolute;
     right: 2.5em;
+    top: 1.2em;
 }
 
 .hamburger {
@@ -25,7 +26,7 @@ h1 {
 .hamburger .bar {
     padding: 0;
     width: 30px;
-    height: 4px;
+    height: 3px;
     background-color: black;
     display: block;
     border-radius: 4px;
@@ -34,7 +35,7 @@ h1 {
 }
 
 .bar1 {
-    top: 4px;
+    top: 5px;
 }
 
 .bar2,
@@ -47,7 +48,7 @@ h1 {
 }
 
 .bar4 {
-    bottom: 0;
+    bottom: 2px;
 }
 
 .checkbox1:checked + label > .hamburger1 > .bar1{

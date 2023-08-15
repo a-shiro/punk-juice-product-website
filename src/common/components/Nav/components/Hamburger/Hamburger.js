@@ -1,8 +1,8 @@
 import styles from "./Hamburger.module.css";
 
-function Hamburger() {
+function Hamburger({ toggleDropdown }) {
   return (
-    <div className={styles.container}>
+    <div onClick={() => toggleDropdown()} className={styles.container}>
       <input
         type="checkbox"
         id="checkbox1"
