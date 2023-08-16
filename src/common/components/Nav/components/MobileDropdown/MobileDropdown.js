@@ -1,28 +1,46 @@
-import styles from "./MobileDropdown.module.css";
+import { useState, Fragment } from "react";
 import { Link } from "react-router-dom";
+import styles from "./MobileDropdown.module.css";
+import Hamburger from "./components/Hamburger/Hamburger";
 
-function MobileDropdown({ visible }) {
+function MobileDropdown() {
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+
   return (
-    <div className={styles.container}>
-      <div
-        className={`${styles.background} ${visible && styles.backgroundActive}`}
-      ></div>
+    <Fragment>
+      <Hamburger
+        dropdownVisible={dropdownVisible}
+        setDropdownVisible={setDropdownVisible}
+      />
 
-      <ul className={`${styles.list} ${visible && styles.listActive}`}>
-        <li>
-          <Link>Home</Link>
-        </li>
-        <li>
-          <Link>Our Team</Link>
-        </li>
-        <li>
-          <Link>Product</Link>
-        </li>
-        <li>
-          <Link>News & Events</Link>
-        </li>
-      </ul>
-    </div>
+      <div className={styles.container}>
+        <div
+          className={`${styles.background} ${
+            dropdownVisible && styles.backgroundActive
+          }`}
+        ></div>
+
+        <ul
+          className={`${styles.list} ${dropdownVisible && styles.listActive}`}
+        >
+          <li>
+            <Link to="/#hero">Home</Link>
+          </li>
+          <li>
+            <Link to="/#team">Our Team</Link>
+          </li>
+          <li>
+            <Link to="/#product">Product</Link>
+          </li>
+          <li>
+            <Link to="/#articles">News & Events</Link>
+          </li>
+          <li>
+            <Link to="/#contact">Contact Us</Link>
+          </li>
+        </ul>
+      </div>
+    </Fragment>
   );
 }
 

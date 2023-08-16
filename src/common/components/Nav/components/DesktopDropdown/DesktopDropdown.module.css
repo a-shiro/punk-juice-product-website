@@ -12,16 +12,13 @@
 
 .link {
     text-decoration: none;
+    color: #717275;
+    transition: color 300ms ;
+}   
 
-    color: gray;
-
-    transition: color 200ms ;
-}
-
-.link:hover, .active {
+.link:hover {
     color: rgba(203,66,148,1);
-
-    transition: color 200ms ;
+    transition: color 300ms ;
 }
 
 /* Queries */
