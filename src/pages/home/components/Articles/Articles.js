@@ -4,7 +4,7 @@ import styles from "./Articles.module.css";
 import Main from "./components/Main/Main";
 import Secondary from "./components/Secondary/Secondary";
 
-function Articles() {
+function Articles({ sectionRef }) {
   const [articles, setArticles] = useState(null);
 
   // Use custom hook to clean up
@@ -19,7 +19,7 @@ function Articles() {
   }, []);
 
   return (
-    <section className={styles.sectionContainer}>
+    <section ref={sectionRef} className={styles.sectionContainer}>
       <div className={styles.titleContainer}>
         <h2>News & Events</h2>
       </div>

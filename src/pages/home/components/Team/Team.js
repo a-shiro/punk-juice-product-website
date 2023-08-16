@@ -2,9 +2,9 @@ import IntroductionText from "./components/IntroductionText/IntroductionText";
 import About from "./components/About/About";
 import styles from "./Team.module.css";
 
-function Team() {
+function Team({ sectionRef }) {
   return (
-    <section className={styles.sectionContainer}>
+    <section ref={sectionRef} className={styles.sectionContainer}>
       <IntroductionText />
       <About />
     </section>

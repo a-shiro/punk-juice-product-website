@@ -1,8 +1,8 @@
 import styles from "./ContactForm.module.css";
 
-function ContactForm() {
+function ContactForm({ sectionRef }) {
   return (
-    <section className={styles.sectionContainer}>
+    <section ref={sectionRef} className={styles.sectionContainer}>
       <h2 className={styles.title}>Don't be shy, write to us</h2>
 
       <form className={styles.contactForm} method="post">

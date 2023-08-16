@@ -4,9 +4,9 @@ import productImage3 from "../../../../assets/images/poster_2.jpg";
 import productImage4 from "../../../../assets/images/mockup_posters.jpg";
 import styles from "./Product.module.css";
 
-function Product() {
+function Product({ sectionRef }) {
   return (
-    <section className={styles.sectionContainer}>
+    <section ref={sectionRef} className={styles.sectionContainer}>
       <div className={styles.titleContainer}>
         <h2>Product</h2>
       </div>
