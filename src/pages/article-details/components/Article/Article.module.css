@@ -47,22 +47,3 @@
         font-size: 3rem;
     }
 }
-
-.fadeAnimationIn {
-    animation: fade-in .500s ease-in-out both;
-}
-
-.fadeAnimationOut {
-    animation: fade-out .500s ease-in-out both;
-}
-
-
-@keyframes fade-in {
-    0%{transform: translateY(150px); opacity: 0;}
-    100%{transform: translateY(0); opacity: 1;}
-}
-
-@keyframes fade-out {  
-    0%{transform: translateY(0); opacity: 1;}
-    100%{transform: translateY(150px); opacity: 0;}
-}
