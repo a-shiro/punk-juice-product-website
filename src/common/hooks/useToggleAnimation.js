@@ -5,6 +5,7 @@ const animations = {
   "fade-in": styles.fadeIn,
   "fade-in-200": styles.fadeIn200,
   "fade-out": styles.fadeOut,
+  "pop-up": styles.popUp,
 };
 
 function createAnimationObserver(refArray, toggle) {
@@ -34,7 +35,7 @@ function useToggleAnimation(refArray) {
           return;
         }
         child.classList.add(styles.fadeOut);
-        child.classList.remove(styles.fadeIn);
+        child.classList.remove(animations[animationType]);
       }
     });
   };

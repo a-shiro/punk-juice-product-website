@@ -10,6 +10,11 @@
     animation: fade-out .500s ease-in-out both;
 }
 
+.popUp {
+    transform-origin: 60px;
+    animation: pop-up .400s .300s both;
+}
+
 @keyframes fade-in {
     0%{transform: translateY(150px); opacity: 0;}
     100%{transform: translateY(0); opacity: 1;}
@@ -18,4 +23,9 @@
 @keyframes fade-out {  
     0%{transform: translateY(0); opacity: 1;}
     100%{transform: translateY(150px); opacity: 0;}
+}
+
+@keyframes pop-up { 
+    0%{transform: scale(0); opacity: 0}
+    100%{transform: scale(1); opacity: 1}
 }

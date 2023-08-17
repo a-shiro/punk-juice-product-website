@@ -1,9 +1,17 @@
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 import styles from "./About.module.css";
 import poster from "../../../../../../assets/images/poster_1.jpg";
 import stockPhoto1 from "../../../../../../assets/images/person2.jpg";
 import arrowIcon from "../../../../../../assets/icons/arrow.png";
+import useToggleAnimation from "../../../../../../common/hooks/useToggleAnimation";
 
 function About() {
+  const titleRef = useRef();
+  const subtitleRef = useRef();
+  const linksRef = useRef();
+  useToggleAnimation([titleRef, subtitleRef, linksRef]);
+
   return (
     <div className={styles.aboutContainer}>
       <div className={styles.posterContainer}>
@@ -11,14 +19,23 @@ function About() {
       </div>
 
       <div className={styles.textContainer}>
-        <h3>We’re - daring and unapologetically advanced.</h3>
+        <div ref={titleRef} aos="fade-in">
+          <h3 className={styles.title}>
+            We’re - daring and unapologetically advanced.
+          </h3>
+        </div>
 
-        <p>Over five years in the production business</p>
+        <div ref={subtitleRef} aos="fade-in">
+          <p className={styles.subtitle}>
+            Over five years in the production business
+          </p>
+        </div>
 
-        <div className={styles.linkContainer}>
-          <a href="#news">Read News & Events</a>
-
-          <a href="#contact">Work with Us</a>
+        <div ref={linksRef} aos="pop-up">
+          <div className={styles.linkContainer}>
+            <Link to="/#articles">Read News & Events</Link>
+            <Link to="/#contact">Work with Us</Link>
+          </div>
         </div>
       </div>
 

@@ -15,12 +15,12 @@
     padding: 3em 2em;
 }
 
-.textContainer > h3 {
+.title {
     font-size: 2rem;
     line-height: 1.5em;
 }
 
-.textContainer > p {
+.subtitle {
     font-size: 1.25rem;
     line-height: 1.5em;
 
