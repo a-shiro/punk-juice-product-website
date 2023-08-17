@@ -1,23 +1,19 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Next.module.css";
-import useToggleAnimation from "../../hooks/useToggleAnimation";
+import useToggleAnimation from "../../../../common/hooks/useToggleAnimation";
 
 function Next({ path }) {
   const linkRef = useRef();
-  const elementVisible = useToggleAnimation(linkRef);
+  useToggleAnimation([linkRef]);
 
   return (
     <section className={styles.sectionContainer}>
       <div className={styles.container}>
         <span>Next article</span>
 
-        <div ref={linkRef}>
-          <h3
-            className={`${styles.titleNext} ${
-              elementVisible ? styles.fadeAnimationIn : styles.fadeAnimationOut
-            }`}
-          >
+        <div ref={linkRef} aos="fade-in">
+          <h3 className={styles.titleNext}>
             <Link to={`/article-details/${path}`}>
               Job Opportunities - Digital Marketing
             </Link>

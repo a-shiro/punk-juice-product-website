@@ -1,28 +1,23 @@
 import { useRef } from "react";
 import styles from "../Article.module.css";
-import useToggleAnimation from "../../../hooks/useToggleAnimation";
+import useToggleAnimation from "../../../../../common/hooks/useToggleAnimation";
 
 function Paragraph({ text, image, paragraphIndex }) {
-  const paragraphRef = useRef();
-  const elementVisible = useToggleAnimation(paragraphRef);
+  const textRef = useRef();
+  const imageRef = useRef();
+  useToggleAnimation([textRef, paragraphIndex === 2 && imageRef]);
 
   return (
-    <div ref={paragraphRef}>
-      <p
-        className={
-          elementVisible ? styles.fadeAnimationIn : styles.fadeAnimationOut
-        }
-      >
-        {text}
-      </p>
+    <div ref={textRef} aos="fade-in">
+      <p>{text}</p>
       {paragraphIndex === 2 && (
-        <img
-          className={`${styles.articleImage} ${
-            elementVisible ? styles.fadeAnimationIn : styles.fadeAnimationOut
-          }`}
-          src={image}
-          alt="article-image"
-        />
+        <div ref={imageRef} aos="fade-in">
+          <img
+            className={styles.articleImage}
+            src={image}
+            alt="article-image"
+          />
+        </div>
       )}
     </div>
   );

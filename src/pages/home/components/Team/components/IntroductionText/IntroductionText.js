@@ -1,13 +1,21 @@
+import { useRef } from "react";
 import styles from "./IntroductionText.module.css";
+import useToggleAnimation from "../../../../../../common/hooks/useToggleAnimation";
 
 function IntroductionText() {
+  const titleRef = useRef();
+  const textRef1 = useRef();
+  const textRef2 = useRef();
+
+  useToggleAnimation([titleRef, textRef1, textRef2]);
+
   return (
     <div className={styles.textContainer}>
-      <div className={styles.titleContainer}>
+      <div ref={titleRef} className={styles.titleContainer} aos="fade-in">
         <h2>Join the movement...</h2>
       </div>
 
-      <div className={styles.paragraphContainer}>
+      <div ref={textRef1} aos="fade-in" className={styles.paragraphContainer}>
         <p>
           Inspired by the unapologetic spirit of punk rock, this audacious drink
           is a fusion of unconventional ingredients that come together to create
@@ -17,7 +25,11 @@ function IntroductionText() {
         </p>
       </div>
 
-      <div className={styles.paragraphContainer}>
+      <div
+        ref={textRef2}
+        aos="fade-in-200"
+        className={styles.paragraphContainer}
+      >
         <p>
           From the rebellious fusion of fruits to the daring hint of spice,{" "}
           <strong>Punk Juice</strong> dares you to be bold and unapologetically
