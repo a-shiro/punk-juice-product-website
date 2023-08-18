@@ -2,9 +2,8 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./About.module.css";
 import poster from "../../../../../../assets/images/poster_1.jpg";
-import stockPhoto1 from "../../../../../../assets/images/person2.jpg";
-import arrowIcon from "../../../../../../assets/icons/arrow.png";
 import useToggleAnimation from "../../../../../../common/hooks/useToggleAnimation";
+import Carousel from "./components/Carousel";
 
 function About() {
   const titleRef = useRef();
@@ -39,27 +38,7 @@ function About() {
         </div>
       </div>
 
-      <div className={styles.carousel}>
-        <div>
-          <img
-            src={stockPhoto1}
-            className={styles.teamPhoto}
-            alt="art-director"
-          />
-
-          <div className={styles.teamDetailsContainer}>
-            <h3>Kelly B.</h3>
-            <p>Art Director</p>
-          </div>
-        </div>
-
-        <button className={styles.carouselControlPrev}>
-          <img src={arrowIcon} />
-        </button>
-        <button className={styles.carouselControlNext}>
-          <img src={arrowIcon} />
-        </button>
-      </div>
+      <Carousel />
     </div>
   );
 }
