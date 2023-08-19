@@ -27,12 +27,12 @@ function Carousel() {
               key={index}
             >
               <img
+                className={styles.photo}
                 src={member.photo}
-                className={styles.teamPhoto}
                 alt="team-member"
               />
 
-              <div className={styles.teamDetailsContainer}>
+              <div className={styles.detailsContainer}>
                 <h3>{member.name}</h3>
                 <p>{member.position}</p>
               </div>
@@ -41,19 +41,12 @@ function Carousel() {
         })}
       </div>
 
-      <button
-        onClick={changeCard}
-        direction="prev"
-        className={styles.carouselControlPrev}
-      >
-        <img src={arrowIcon} alt="arrow-prev" />
+      <button onClick={changeCard} className={styles.btnPrev} direction="prev">
+        <img src={arrowIcon} alt="arrow-prev" direction="prev" />
       </button>
-      <button
-        onClick={changeCard}
-        direction="next"
-        className={styles.carouselControlNext}
-      >
-        <img src={arrowIcon} alt="arrow-next" />
+
+      <button onClick={changeCard} className={styles.btnNext} direction="next">
+        <img src={arrowIcon} alt="arrow-next" direction="next" />
       </button>
     </div>
   );

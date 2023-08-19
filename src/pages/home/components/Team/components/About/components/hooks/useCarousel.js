@@ -1,39 +1,50 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from "../Carousel.module.css";
 
 let cards = [];
 
+function getActiveIndex() {
+  return cards.findIndex((card) => card.classList.length > 1);
+}
+
+function getNextIndex(activeIndex, event) {
+  const direction =
+    event === undefined ? "next" : event.target.attributes.direction.value;
+
+  return direction === "next"
+    ? activeIndex + 1 === cards.length
+      ? 0
+      : activeIndex + 1
+    : activeIndex - 1 < 0
+    ? cards.length - 1
+    : activeIndex - 1;
+}
+
 function loadCards() {
-  cards = document.querySelectorAll(`#cardsContainer > div`);
-  return;
+  return (cards = Array.from(
+    document.querySelectorAll(`#cardsContainer > div`)
+  ));
 }
 
 function useCarousel(teamArray) {
-  const changeCard = (e) => {
-    try {
-      const direction = e.target.parentElement.attributes.direction.value;
-      let nextIndex = null;
+  const changeCard = (event) => {
+    const activeIndex = getActiveIndex();
+    const nextIndex = getNextIndex(activeIndex, event);
 
-      if (direction === "next") {
-        nextIndex = activeIndex + 1 === teamArray.length ? 0 : activeIndex + 1;
-      } else {
-        nextIndex =
-          activeIndex - 1 < 0 ? teamArray.length - 1 : activeIndex - 1;
-      }
-
-      cards[activeIndex].classList.remove(styles.active);
-      cards[nextIndex].classList.add(styles.active);
-
-      setActiveIndex(nextIndex);
-    } catch (err) {
-      return;
-    }
+    cards[activeIndex].classList.remove(styles.active);
+    cards[nextIndex].classList.add(styles.active);
   };
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
   useEffect(() => {
-    loadCards();
+    teamArray.length > 0 && loadCards();
+
+    const interval = setInterval(() => {
+      teamArray.length > 0 && changeCard();
+    }, 6000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, [teamArray]);
 
   return changeCard;
