@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fetchData } from "../../../../services/queries";
 import styles from "./Articles.module.css";
 import Main from "./components/Main/Main";
 import Secondary from "./components/Secondary/Secondary";
+import useToggleAnimation from "../../../../common/hooks/useToggleAnimation";
 
 function Articles({ sectionRef }) {
   const [articles, setArticles] = useState(null);
-
-  // Use custom hook to clean up
+  const titleRef = useRef();
+  useToggleAnimation([titleRef]);
 
   useEffect(() => {
     const getArticles = async () => {
@@ -20,7 +21,7 @@ function Articles({ sectionRef }) {
 
   return (
     <section ref={sectionRef} className={styles.sectionContainer}>
-      <div className={styles.titleContainer}>
+      <div ref={titleRef} className={styles.titleContainer} aos="fade-in">
         <h2>News & Events</h2>
       </div>
 
