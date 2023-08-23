@@ -1,50 +1,70 @@
 import styles from "./ContactForm.module.css";
+import useToggleAnimation from "../../../../common/hooks/useToggleAnimation";
+import Modal from "./Modal";
 
 function ContactForm({ sectionRef }) {
+  useToggleAnimation([sectionRef]);
+
+  const sendMessage = (e) => {
+    e.preventDefault();
+
+    document.querySelector(`.${styles.overlay}`).classList.add(styles.visible);
+  };
+
   return (
-    <section ref={sectionRef} className={styles.sectionContainer}>
-      <h2 className={styles.title}>Don't be shy, write to us</h2>
+    <section ref={sectionRef} aos="fade-in" className={styles.sectionContainer}>
+      <div>
+        <h2 className={styles.title}>Don't be shy, write to us</h2>
 
-      <form className={styles.contactForm} method="post">
-        <div className={styles.inputWrapper}>
-          <div>
-            <label>Name</label>
+        <form
+          onSubmit={sendMessage}
+          className={styles.contactForm}
+          method="post"
+        >
+          <div className={styles.inputWrapper}>
+            <div>
+              <label>Name</label>
 
-            <input
-              className={styles.formField}
-              type="text"
-              placeholder="Full name"
-              required
-            />
+              <input
+                className={styles.formField}
+                type="text"
+                pattern="^[a-zA-Z]{2,}( {1,2}[a-zA-Z]{2,}){0,}$"
+                placeholder="Full name"
+                required
+              />
+            </div>
+
+            <div>
+              <label>Email</label>
+
+              <input
+                className={styles.formField}
+                type="email"
+                pattern="[^ @]*@[^ @]*"
+                placeholder="Email address"
+                required
+              />
+            </div>
           </div>
 
-          <div>
-            <label>Email</label>
+          <div className={styles.textWrapper}>
+            <label>How can we help?</label>
 
-            <input
-              className={styles.formField}
-              type="email"
-              pattern="[^ @]*@[^ @]*"
-              placeholder="Email address"
+            <textarea
+              rows="10"
+              placeholder="Ask us anything . . ."
               required
-            />
+            ></textarea>
           </div>
-        </div>
 
-        <div className={styles.textWrapper}>
-          <label>How can we help?</label>
+          <div className={styles.buttonContainer}>
+            <span className={styles.hoverText}></span>
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
 
-          <textarea
-            rows="10"
-            placeholder="Ask us anything . . ."
-            required
-          ></textarea>
-        </div>
-
-        <div className={styles.buttonContainer}>
-          <button type="submit">Send Message</button>
-        </div>
-      </form>
+      <Modal />
     </section>
   );
 }

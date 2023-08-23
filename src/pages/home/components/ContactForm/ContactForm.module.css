@@ -1,141 +1,229 @@
 .sectionContainer {
-    padding: 5em 1em;
+  padding: 5em 1em;
 }
 
-.title { 
-    margin-bottom: 1em;
+.title {
+  margin-bottom: 1em;
 
-    font-size: 2.250rem;
-    text-align: center;
+  font-size: 2.25rem;
+  text-align: center;
 }
 
 .contactForm {
-    margin: auto;
+  margin: auto;
 
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;    
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 
-    max-width: 40em;
+  max-width: 40em;
 }
 
 .contactForm label {
-    color: #717275;
-    font-weight: 600;
+  color: #717275;
+  font-weight: 600;
 }
 
-.inputWrapper { 
-    width: 100%;
-    
-    display: flex;
-    justify-content: space-between;
+.contactForm label::after {
+  content: " *";
+  color: #dc3545;
+}
 
+.inputWrapper {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .inputWrapper > div {
-    width: 45%;
+  width: 45%;
 }
 
 .formField {
-    width: 100%;
-    padding: 1.200em .800em;
-    margin-top: .750em;
-    
-    border: 1px solid #ced4da;
+  width: 100%;
+  padding: 1.2em 0.8em;
+  margin-top: 0.75em;
 
-    transition: border 200ms ease, box-shadow 200ms ease;
+  border: 1px solid #ced4da;
+
+  transition: border 200ms ease, box-shadow 200ms ease;
 }
 
 .formField::placeholder {
-    font-family: Montserrat, sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
 
-    color: #8e9093;
+  color: #8e9093;
 }
 
 .textWrapper {
-    margin-top: 2.500em;
-    width: 100%;
+  margin-top: 2.5em;
+  width: 100%;
 }
 
 .textWrapper > textarea {
-    width: 100%;
-    max-width: 100%;
-    min-width: 100%;
-    
-    padding: 1em;
-    margin-top: .750em;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
 
-    border: 1px solid #ced4da;
+  padding: 1em;
+  margin-top: 0.75em;
 
-    transition: border 200ms ease, box-shadow 200ms ease;
+  border: 1px solid #ced4da;
+
+  transition: border 200ms ease, box-shadow 200ms ease;
 }
 
 .textWrapper > textarea::placeholder {
-    font-family: Montserrat, sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
 
-    color: #8e9093;
+  color: #8e9093;
 }
 
 .formField:focus,
 .textWrapper > textarea:focus {
-    border: 1px solid rgba(203,66,148,1);
-    box-shadow: 0 0 0 5px rgb(255, 148, 212);
-    outline: none;
+  border: 1px solid rgba(203, 66, 148, 1);
+  box-shadow: 0 0 0 5px rgb(255, 148, 212);
+  outline: none;
 }
- 
-.buttonContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
 
-    margin-top: 4em;
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  margin-top: 4em;
 }
 
 .buttonContainer > button {
-    width: 100%;
-    padding: .800em;
+  width: 100%;
+  padding: 0.8em;
 
-    font-family: Montserrat, sans-serif;
-    font-weight: 600;
-    font-size: 1.100rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
-    color: white;
-    background: -webkit-linear-gradient(140deg, rgba(203,66,148,1) 0%, rgba(208,143,23,1) 100%);
-    
-    border: none;
-    border-radius: 2em;
-    
-    cursor: pointer;
+  color: white;
+  background: -webkit-linear-gradient(
+    140deg,
+    rgba(203, 66, 148, 1) 0%,
+    rgba(208, 143, 23, 1) 100%
+  );
 
-    transition: box-shadow 300ms, transform 300ms;
+  border: none;
+  border-radius: 2em;
+
+  cursor: pointer;
 }
 
 .buttonContainer > button:focus {
-    transform: scale(1.020);
-    transition: box-shadow 300ms, transform 300ms;
-    box-shadow: 0 5px 15px 0px rgb(196, 196, 196);
-    outline: none;
+  outline: none;
 }
 
 @media (width >= 75em) {
-    .sectionContainer {
-        padding: 10em 1em;
-    }
-    
-    .title {
-        margin-bottom: 1.500em;
-        font-size: 2.800rem;
-    }
+  .sectionContainer {
+    padding: 10em 1em;
+  }
 
-    .buttonContainer > button {
-        max-width: 20em;
-        padding: 1em;
-    }
+  .title {
+    margin-bottom: 1.5em;
+    font-size: 2.8rem;
+  }
+
+  .buttonContainer > button {
+    max-width: 20em;
+    padding: 1em;
+  }
 }
 
+/* Modal */
+
+.overlay {
+  display: none;
+
+  background-color: rgba(0, 0, 0, 0.8);
+
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  z-index: 200;
+}
+
+.tick {
+  width: 10rem;
+  margin-bottom: 2rem;
+}
+
+.container {
+  text-align: center;
+
+  background-color: white;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 5rem 6rem;
+
+  border-radius: 5%;
+
+  animation: fade-in 0.5s 0.1s both ease-out;
+}
+
+.container > p:first-of-type {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.container > p:last-child {
+  font-size: 1.15rem;
+  color: gray;
+}
+
+.container > button {
+  border: gray 1px solid;
+  border-radius: 30px;
+
+  font-size: 1.15rem;
+
+  padding: 1rem 5rem;
+  margin-top: 3rem;
+
+  background-color: white;
+  color: gray;
+
+  cursor: pointer;
+}
+
+.visible {
+  display: block;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (width >= 720px) {
+  .container {
+    padding: 5rem 10rem;
+  }
+}
