@@ -1,10 +1,7 @@
 import styles from "./ContactForm.module.css";
-import useToggleAnimation from "../../../../common/hooks/useToggleAnimation";
 import Modal from "./Modal";
 
-function ContactForm({ sectionRef }) {
-  useToggleAnimation([sectionRef]);
-
+function ContactForm() {
   const sendMessage = (e) => {
     e.preventDefault();
 
@@ -12,7 +9,7 @@ function ContactForm({ sectionRef }) {
   };
 
   return (
-    <section ref={sectionRef} aos="fade-in" className={styles.sectionContainer}>
+    <section id="contact" aos="fade-in" className={styles.sectionContainer}>
       <div>
         <h2 className={styles.title}>Don't be shy, write to us</h2>
 

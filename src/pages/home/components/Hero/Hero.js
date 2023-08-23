@@ -1,9 +1,9 @@
 import heroVideo from "../../../../assets/videos/PunkJuice.mov";
 import styles from "./Hero.module.css";
 
-function Hero({ sectionRef }) {
+function Hero() {
   return (
-    <section ref={sectionRef} className={styles.heroContainer}>
+    <section id="hero" className={styles.heroContainer}>
       <div className={styles.heroText}>
         <h1>Punk Juice</h1>
 

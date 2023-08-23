@@ -7,12 +7,12 @@ import Poster from "./components/Poster";
 import useToggleAnimation from "../../../../common/hooks/useToggleAnimation";
 import { useRef } from "react";
 
-function Product({ sectionRef }) {
+function Product() {
   const titleRef = useRef();
   useToggleAnimation([titleRef]);
 
   return (
-    <section ref={sectionRef} className={styles.sectionContainer}>
+    <section id="product" className={styles.sectionContainer}>
       <div ref={titleRef} className={styles.titleContainer} aos="fade-in">
         <h2>Product</h2>
       </div>

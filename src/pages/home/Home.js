@@ -6,43 +6,29 @@ import Product from "./components/Product/Product";
 import Articles from "./components/Articles/Articles";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Map from "./components/Map/Map";
-import useSkeletonLoading from "../../common/hooks/useSkeletonLoading";
 import SkeletonOverlay from "../../common/components/SkeletonOverlay/SkeletonOverlay";
-import { useLocation } from "react-router-dom";
-import useRefList from "./hooks/useRefList";
-
-function getCurrentHash(location, refKeys) {
-  const refKey = location.hash.replace("#", "");
-  return !location.hash || !refKeys.includes(refKey) ? "hero" : refKey;
-}
-
-function scrollToSection(hash, refList) {
-  return refList[hash].current?.scrollIntoView({ behavior: "smooth" });
-}
+import useGetData from "./hooks/useGetData";
+import scroll from "./utils/scroll";
 
 function Home() {
-  const skeletonLoading = useSkeletonLoading();
-  const refList = useRefList();
-  const location = useLocation();
+  const [team, articles] = useGetData();
 
   useEffect(() => {
-    const hash = getCurrentHash(location, Object.keys(refList));
-
-    scrollToSection(hash, refList);
-  }, [skeletonLoading, location.key]);
+    scroll();
+  }, [team, articles]);
 
   return (
     <main>
-      {skeletonLoading ? (
+      {!team && !articles ? (
         <SkeletonOverlay />
       ) : (
         <Fragment>
-          <Hero sectionRef={refList.hero} />
+          <Hero />
           <Nav />
-          <Team sectionRef={refList.team} />
-          <Product sectionRef={refList.product} />
-          <Articles sectionRef={refList.articles} />
-          <ContactForm sectionRef={refList.contact} />
+          <Team />
+          <Product />
+          <Articles />
+          <ContactForm />
           <Map />
         </Fragment>
       )}
