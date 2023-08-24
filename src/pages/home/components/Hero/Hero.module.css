@@ -1,92 +1,107 @@
-.heroContainer {
-    position: relative;
+.section {
+  position: relative;
+
+  background-color: #d78cae;
+
+  overflow: hidden;
 }
 
-.heroText {
-    color: #fff;
+.header {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
 
-    position: absolute;
+  text-align: center;
 
-    text-align: center;
-    
-    left: 50%;
-    top: 50%;
+  color: #fff;
 
-    width: 100%;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 10;
-    overflow: hidden;
+  transform: translate(-50%, -50%);
 }
 
-.heroText > h1 {
-    margin: 2.25em 0 .25em 0;
-    font-size: 2rem;
-    
-    animation: pop-up .340s 1.2s ease-out both;
+.header > h1 {
+  margin-bottom: 1rem;
+
+  font-size: 2rem;
+
+  animation: pop-up 0.4s 1.2s ease-out both;
 }
 
-.heroText > p {
-    margin-bottom: 5em;
-    font-size: 1rem;
-    animation: fade-up .340s 1.4s ease-out both;
+.header > p {
+  font-size: 1rem;
+
+  animation: slide-up 0.4s 1.4s ease-out both;
 }
 
-.heroText > p > strong {
-    border-bottom: 2px solid white;
-    padding-bottom: 2px;
+.header strong {
+  padding-bottom: 2px;
+
+  border-bottom: 2px solid white;
 }
 
-
-.videoWrapper > video {
-    width: 100%;
+.backgroundVideo {
+  width: 100%;
 }
 
-.heroOverlay {
-    background: linear-gradient(to top, rgb(21, 21, 21), transparent 95%);
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
 
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+  background: linear-gradient(to top, rgb(35, 35, 35), transparent 95%);
+}
+
+/* Animations */
+
+@keyframes pop-up {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Queries */
 
-@media (width >= 45em) {
-    .heroText > h1 {
-        font-size: 3rem;
-    }
+@media (width >= 720px) {
+  .header > h1 {
+    font-size: 3rem;
+  }
 
-    .heroText > p {
-        font-size: 1.5rem;
-    }
+  .header > p {
+    font-size: 1.25rem;
+  }
 }
 
-@media (width >= 75em) {
-    .videoWrapper {
-        overflow: hidden;
-    }
+@media (width >= 1200px) {
+  .header > h1 {
+    font-size: 4.5rem;
+  }
 
-    .videoWrapper > video {
-        width: 100vw;
-        height: 91vh;
-        object-fit: cover;
-    }
+  .header > p {
+    font-size: 1.5rem;
+  }
 
-    .heroText > h1 {
-        font-size: 4.5rem;
-    }
-}
+  .backgroundVideo {
+    height: 91vh;
 
-@keyframes fade-up {
-    0%{transform: translateY(100px); opacity: 0}
-    100%{transform: translateY(0); opacity: 1}
-}
-
-@keyframes pop-up {
-    0%{transform: scale(.6); opacity: 0}
-    100%{transform: scale(1.1); opacity: 1}
+    object-fit: cover;
+  }
 }
