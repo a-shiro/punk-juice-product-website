@@ -1,22 +1,15 @@
 import styles from "./Hamburger.module.css";
 
-function Hamburger({ dropdownVisible, setDropdownVisible }) {
-  const toggleDropdown = () => {
-    setDropdownVisible(!dropdownVisible);
-  };
-
+function Hamburger({ toggleDropdown }) {
   return (
-    <div className={styles.container}>
+    <div className={styles.hamburger}>
       <input
         type="checkbox"
-        id="checkbox1"
-        className={`${styles.checkbox1}  ${styles.visuallyHidden}`}
+        id="checkbox"
+        className={`${styles.checkbox}  ${styles.hidden}`}
       />
-      <label htmlFor="checkbox1">
-        <div
-          onClick={toggleDropdown}
-          className={`${styles.hamburger} ${styles.hamburger1}`}
-        >
+      <label htmlFor="checkbox">
+        <div onClick={toggleDropdown} className={`${styles.barContainer}`}>
           <span className={`${styles.bar} ${styles.bar1}`}></span>
           <span className={`${styles.bar} ${styles.bar2}`}></span>
           <span className={`${styles.bar} ${styles.bar3}`}></span>
