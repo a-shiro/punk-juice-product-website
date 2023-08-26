@@ -1,22 +1,22 @@
 import { useRef } from "react";
-import styles from "./IntroductionText.module.css";
+import styles from "./Heading.module.css";
 import useToggleAnimation from "../../../../../../common/hooks/useToggleAnimation";
 
-function IntroductionText() {
-  const titleRef = useRef();
-  const textRef1 = useRef();
-  const textRef2 = useRef();
+function Heading() {
+  const title = useRef();
+  const textLeft = useRef();
+  const textRight = useRef();
 
-  useToggleAnimation([titleRef, textRef1, textRef2]);
+  useToggleAnimation([title, textLeft, textRight]);
 
   return (
-    <div className={styles.textContainer}>
-      <div ref={titleRef} className={styles.titleContainer} aos="fade-in">
-        <h2>Join the movement...</h2>
+    <hgroup className={styles.container}>
+      <div obeserverbox="obeserverbox" ref={title}>
+        <h2 animation="fade-in">Join the movement...</h2>
       </div>
 
-      <div ref={textRef1} aos="fade-in" className={styles.paragraphContainer}>
-        <p>
+      <div obeserverbox="observerbox" ref={textLeft}>
+        <p animation="fade-in">
           Inspired by the unapologetic spirit of punk rock, this audacious drink
           is a fusion of unconventional ingredients that come together to create
           a sensory rebellion. From the first sip to the last drop,{" "}
@@ -25,12 +25,8 @@ function IntroductionText() {
         </p>
       </div>
 
-      <div
-        ref={textRef2}
-        aos="fade-in-200"
-        className={styles.paragraphContainer}
-      >
-        <p>
+      <div obeserverbox="obeserverbox" ref={textRight}>
+        <p animation="fade-in-200">
           From the rebellious fusion of fruits to the daring hint of spice,{" "}
           <strong>Punk Juice</strong> dares you to be bold and unapologetically
           yourself. Raise your glass and join the movement – because in a world
@@ -38,8 +34,8 @@ function IntroductionText() {
           with a cause, redefining refreshment one sip at a time.
         </p>
       </div>
-    </div>
+    </hgroup>
   );
 }
 
-export default IntroductionText;
+export default Heading;

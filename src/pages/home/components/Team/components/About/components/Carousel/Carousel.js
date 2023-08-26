@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { fetchData } from "../../../../../../../services/queries";
+import { fetchData } from "../../../../../../../../services/queries";
 import styles from "./Carousel.module.css";
-import arrowIcon from "../../../../../../../assets/icons/arrow.png";
 import useCarousel from "./hooks/useCarousel";
+import arrowIcon from "../../../../../../../../assets/icons/arrow.png";
 
 function Carousel() {
   const [teamArray, setTeamArray] = useState([]);
@@ -32,7 +32,7 @@ function Carousel() {
                 alt="team-member"
               />
 
-              <div className={styles.detailsContainer}>
+              <div className={styles.details}>
                 <h3>{member.name}</h3>
                 <p>{member.position}</p>
               </div>
@@ -41,13 +41,15 @@ function Carousel() {
         })}
       </div>
 
-      <button onClick={changeCard} className={styles.btnPrev} direction="prev">
-        <img src={arrowIcon} alt="arrow-prev" direction="prev" />
-      </button>
+      <div>
+        <button onClick={changeCard} className={styles.prev} direction="prev">
+          <img src={arrowIcon} alt="arrow-prev" direction="prev" />
+        </button>
 
-      <button onClick={changeCard} className={styles.btnNext} direction="next">
-        <img src={arrowIcon} alt="arrow-next" direction="next" />
-      </button>
+        <button onClick={changeCard} className={styles.next} direction="next">
+          <img src={arrowIcon} alt="arrow-next" direction="next" />
+        </button>
+      </div>
     </div>
   );
 }

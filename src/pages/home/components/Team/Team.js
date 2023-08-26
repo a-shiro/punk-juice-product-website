@@ -1,11 +1,11 @@
-import IntroductionText from "./components/IntroductionText/IntroductionText";
+import Heading from "./components/Heading/Heading";
 import About from "./components/About/About";
 import styles from "./Team.module.css";
 
 function Team() {
   return (
     <section id="team" className={styles.sectionContainer}>
-      <IntroductionText />
+      <Heading />
       <About />
     </section>
   );

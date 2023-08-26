@@ -1,37 +1,36 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import Carousel from "./components/Carousel/Carousel";
 import styles from "./About.module.css";
-import poster from "../../../../../../assets/images/poster_1.jpg";
 import useToggleAnimation from "../../../../../../common/hooks/useToggleAnimation";
-import Carousel from "./components/Carousel";
+import scroll from "../../../../utils/scroll";
+import poster from "../../../../../../assets/images/poster_1.jpg";
 
 function About() {
-  const titleRef = useRef();
-  const subtitleRef = useRef();
-  const linksRef = useRef();
-  useToggleAnimation([titleRef, subtitleRef, linksRef]);
+  const title = useRef();
+  const subtitle = useRef();
+  const links = useRef();
+  useToggleAnimation([title, subtitle, links]);
 
   return (
-    <div className={styles.aboutContainer}>
-      <div className={styles.posterContainer}>
+    <div className={styles.container}>
+      <div>
         <img className={styles.poster} src={poster} alt="poster" />
       </div>
 
       <div className={styles.textContainer}>
-        <div ref={titleRef} aos="fade-in">
-          <h3 className={styles.title}>
+        <div observerbox="observerbox" ref={title}>
+          <h3 animation="fade-in">
             We’re - daring and unapologetically advanced.
           </h3>
         </div>
 
-        <div ref={subtitleRef} aos="fade-in">
-          <p className={styles.subtitle}>
-            Over five years in the production business
-          </p>
+        <div observerbox="observerbox" ref={subtitle}>
+          <p animation="fade-in">Over five years in the production business</p>
         </div>
 
-        <div ref={linksRef} aos="pop-up">
-          <div className={styles.linkContainer}>
+        <div observerbox="observerbox" ref={links}>
+          <div onClick={scroll} animation="pop-up">
             <Link to="/#articles">Read News & Events</Link>
             <Link to="/#contact">Work with Us</Link>
           </div>
