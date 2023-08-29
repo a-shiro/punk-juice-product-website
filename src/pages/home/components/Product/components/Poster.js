@@ -7,8 +7,8 @@ function Poster({ image }) {
   useToggleAnimation([posterRef]);
 
   return (
-    <div ref={posterRef} aos="fade-in-fast">
-      <img src={image} className={styles.productImage} alt="product" />
+    <div animation="fade-in" threshold={0.3} ref={posterRef}>
+      <img src={image} className={styles.poster} alt="product" />
     </div>
   );
 }
