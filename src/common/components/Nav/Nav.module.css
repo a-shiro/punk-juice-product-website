@@ -2,8 +2,14 @@
   padding: 1.25rem;
 
   display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
 
   position: sticky;
   left: 0;
@@ -13,6 +19,7 @@
   background-color: white;
 
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 
 .brand {
@@ -28,16 +35,17 @@
     rgba(203, 66, 148, 1) 80%
   );
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-tap-highlight-color: transparent;
 
   cursor: pointer;
 }
 
-/* Queries */
-
+/* Media Queries */
 @media (width >= 1200px) {
   .navigation {
     justify-content: space-around;
+    -ms-flex-pack: distribute;
   }
 }

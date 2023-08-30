@@ -1,4 +1,4 @@
-.sectionContainer {
+.section {
   padding: 5rem 1rem;
 }
 
@@ -12,9 +12,16 @@
 .contactForm {
   margin: auto;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
   flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
 
   max-width: 40em;
 }
@@ -23,7 +30,11 @@
   width: 100%;
 
   display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
 }
 
 .personalData > div {
@@ -37,7 +48,44 @@
 
   border: 1px solid #ced4da;
 
+  transition: border 0.2s ease, -webkit-box-shadow 0.2s ease;
+  -webkit-transition: border 0.2s ease, -webkit-box-shadow 0.2s ease;
+  -o-transition: border 0.2s ease, box-shadow 0.2s ease;
   transition: border 0.2s ease, box-shadow 0.2s ease;
+  transition: border 0.2s ease, box-shadow 0.2s ease,
+    -webkit-box-shadow 0.2s ease;
+}
+
+.contactForm input::-webkit-input-placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+
+  color: #8e9093;
+}
+
+.contactForm input::-moz-placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+
+  color: #8e9093;
+}
+
+.contactForm input:-ms-input-placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+
+  color: #8e9093;
+}
+
+.contactForm input::-ms-input-placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+
+  color: #8e9093;
 }
 
 .contactForm input::placeholder {
@@ -74,7 +122,44 @@
 
   border: 1px solid #ced4da;
 
+  transition: border 0.2s ease, -webkit-box-shadow 0.2s ease;
+  -webkit-transition: border 0.2s ease, -webkit-box-shadow 0.2s ease;
+  -o-transition: border 0.2s ease, box-shadow 0.2s ease;
   transition: border 0.2s ease, box-shadow 0.2s ease;
+  transition: border 0.2s ease, box-shadow 0.2s ease,
+    -webkit-box-shadow 0.2s ease;
+
+  &::-webkit-input-placeholder {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+
+    color: #8e9093;
+  }
+
+  &::-moz-placeholder {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+
+    color: #8e9093;
+  }
+
+  &:-ms-input-placeholder {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+
+    color: #8e9093;
+  }
+
+  &::-ms-input-placeholder {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+
+    color: #8e9093;
+  }
 
   &::placeholder {
     font-family: Montserrat, sans-serif;
@@ -88,6 +173,7 @@
 .contactForm input:focus,
 .contactForm textarea:focus {
   border: 1px solid rgba(203, 66, 148, 1);
+  -webkit-box-shadow: 0 0 0 5px rgb(255, 148, 212);
   box-shadow: 0 0 0 5px rgb(255, 148, 212);
   outline: none;
 }
@@ -139,6 +225,7 @@
   background-color: rgba(0, 0, 0, 0.8);
 
   animation: fade-in 0.5s 0.1s both ease-out;
+  -webkit-animation: fade-in 0.5s 0.1s both ease-out;
 }
 
 .tick {
@@ -158,10 +245,13 @@
   border-radius: 5%;
 
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 
   background-color: white;
 
   animation: fade-in 0.5s 0.1s both ease-out;
+  -webkit-animation: fade-in 0.5s 0.1s both ease-out;
 }
 
 .modal > p:first-of-type {
@@ -204,7 +294,7 @@
 }
 
 @media (width >= 1200px) {
-  .sectionContainer {
+  .section {
     padding: 10rem 1rem;
   }
 
@@ -221,6 +311,14 @@
 }
 
 /* Animations */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes fade-in {
   0% {
     opacity: 0;

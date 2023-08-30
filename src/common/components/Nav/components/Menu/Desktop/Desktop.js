@@ -4,7 +4,7 @@ import scroll from "../../../../../../pages/home/utils/scroll";
 
 function Desktop() {
   return (
-    <ul className={styles.list}>
+    <menu className={styles.list}>
       <li onClick={scroll}>
         <Link to="/#hero">Home</Link>
       </li>
@@ -20,7 +20,7 @@ function Desktop() {
       <li onClick={scroll}>
         <Link to="/#contact">Contact Us</Link>
       </li>
-    </ul>
+    </menu>
   );
 }
 

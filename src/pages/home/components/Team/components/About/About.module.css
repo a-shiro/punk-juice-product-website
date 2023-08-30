@@ -5,7 +5,9 @@
   display: block;
 
   object-fit: cover;
+  -o-object-fit: cover;
   object-position: 0 14%;
+  -o-object-position: 0 14%;
 }
 
 .textContainer {
@@ -47,6 +49,8 @@
 @media (width >= 1200px) {
   .container {
     display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
   }
 
   .poster {

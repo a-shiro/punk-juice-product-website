@@ -18,6 +18,8 @@
   left: 50%;
 
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 .spinner {
@@ -41,26 +43,42 @@
   border-color: rgba(203, 66, 148, 1) transparent transparent transparent;
 
   animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  -webkit-animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
 .spinner div:nth-child(1) {
   animation-delay: -0.45s;
+  -webkit-animation-delay: -0.45s;
 }
 
 .spinner div:nth-child(2) {
   animation-delay: -0.3s;
+  -webkit-animation-delay: -0.3s;
 }
 
 .spinner div:nth-child(3) {
   animation-delay: -0.15s;
+  -webkit-animation-delay: -0.15s;
 }
 
 /* Animations */
-@keyframes loading {
+@-webkit-keyframes loading {
   0% {
     transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
   }
 }

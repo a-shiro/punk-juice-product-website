@@ -9,7 +9,7 @@ function Articles({ articles }) {
   useToggleAnimation([titleRef]);
 
   return (
-    <section id="articles" className={styles.sectionContainer}>
+    <section id="articles" className={styles.section}>
       <div
         observerbox="observerbox"
         animation="fade-in"

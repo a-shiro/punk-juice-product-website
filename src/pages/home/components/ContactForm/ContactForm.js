@@ -11,11 +11,7 @@ function ContactForm() {
   };
 
   return (
-    <section
-      id="contact"
-      animation="fade-in"
-      className={styles.sectionContainer}
-    >
+    <section id="contact" animation="fade-in" className={styles.section}>
       <div>
         <h2 className={styles.title}>Don't be shy, write to us</h2>
 

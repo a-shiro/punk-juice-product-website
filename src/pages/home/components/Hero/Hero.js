@@ -4,13 +4,13 @@ import videoWebm from "../../../../assets/videos/PunkJuice.webm";
 
 function Hero() {
   return (
-    <section id="hero" className={styles.section}>
-      <header className={styles.header}>
+    <section id="hero" className={styles.header}>
+      <div className={styles.container}>
         <h1>Punk Juice</h1>
         <p>
           for those who <strong>rock</strong>
         </p>
-      </header>
+      </div>
 
       <video className={styles.backgroundVideo} playsInline autoPlay muted loop>
         <source src={videoWebm} type="video/webm" />

@@ -1,31 +1,64 @@
+.fadeInFast {
+  animation: fade-in-fast 0.5s ease-in-out both;
+}
+
 .fadeIn {
-    animation: fade-in .500s ease-in-out both;
+  animation: fade-in 0.5s ease-in-out both;
 }
 
 .fadeIn200 {
-    animation: fade-in .500s .300s ease-in-out both;
+  animation: fade-in 0.5s 0.3s ease-in-out both;
 }
 
 .fadeOut {
-    animation: fade-out .500s ease-in-out both;
+  animation: fade-out 0.5s ease-in-out both;
 }
 
 .popUp {
-    transform-origin: 60px;
-    animation: pop-up .400s .300s both;
+  transform-origin: 60px;
+  animation: pop-up 0.4s 0.3s both;
+}
+
+@keyframes fade-in-fast {
+  0% {
+    transform: translateY(350px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in {
-    0%{transform: translateY(150px); opacity: 0;}
-    100%{transform: translateY(0); opacity: 1;}
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-@keyframes fade-out {  
-    0%{transform: translateY(0); opacity: 1;}
-    100%{transform: translateY(150px); opacity: 0;}
+@keyframes fade-out {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
 }
 
-@keyframes pop-up { 
-    0%{transform: scale(0); opacity: 0}
-    100%{transform: scale(1); opacity: 1}
+@keyframes pop-up {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

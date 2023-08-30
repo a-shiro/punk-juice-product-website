@@ -12,10 +12,17 @@
   z-index: 1;
 
   transform: translateX(-15rem);
+  -webkit-transform: translateX(-15rem);
+  -ms-transform: translateX(-15rem);
 
   opacity: 0;
 
+  transition: opacity 0.4s linear, -webkit-transform 0.1s 0.8s;
+  -webkit-transition: opacity 0.4s linear, -webkit-transform 0.1s 0.8s;
   transition: opacity 0.4s linear, transform 0.1s 0.8s;
+  -o-transition: opacity 0.4s linear, transform 0.1s 0.8s;
+  transition: opacity 0.4s linear, transform 0.1s 0.8s,
+    -webkit-transform 0.1s 0.8s;
 }
 
 .list > li:not(:last-child) {
@@ -31,11 +38,15 @@
 }
 
 .listActive {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
 
   opacity: 1;
 
   transition: opacity 0.4s 0.3s linear;
+  -webkit-transition: opacity 0.4s 0.3s linear;
+  -o-transition: opacity 0.4s 0.3s linear;
 }
 
 .background {
@@ -47,18 +58,36 @@
   left: 0;
 
   transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+
   transform-origin: top;
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
 
   background-color: white;
   box-shadow: 0 4rem 3rem rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 0 4rem 3rem rgba(0, 0, 0, 0.09);
 
+  transition: -webkit-transform 0.8s cubic-bezier(0.88, -0.02, 0.83, 0.64);
+  -webkit-transition: -webkit-transform 0.8s
+    cubic-bezier(0.88, -0.02, 0.83, 0.64);
   transition: transform 0.8s cubic-bezier(0.88, -0.02, 0.83, 0.64);
+  -o-transition: transform 0.8s cubic-bezier(0.88, -0.02, 0.83, 0.64);
+  transition: transform 0.8s cubic-bezier(0.88, -0.02, 0.83, 0.64),
+    -webkit-transform 0.8s cubic-bezier(0.88, -0.02, 0.83, 0.64);
 }
 
 .backgroundActive {
   transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
 
   transition: transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
 /* Media queries */

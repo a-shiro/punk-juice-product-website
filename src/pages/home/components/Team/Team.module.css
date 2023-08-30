@@ -1,10 +1,10 @@
-.sectionContainer {
+.section {
   padding: 5rem 0;
 }
 
 /* Queries */
 @media (width >= 1200px) {
-  .sectionContainer {
+  .section {
     padding: 10rem 0;
   }
 }

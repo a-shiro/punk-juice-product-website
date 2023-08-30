@@ -12,7 +12,7 @@ function Product() {
   useToggleAnimation([titleRef]);
 
   return (
-    <section id="product" className={styles.sectionContainer}>
+    <section id="product" className={styles.section}>
       <div
         observerbox="observerbox"
         animation="fade-in"

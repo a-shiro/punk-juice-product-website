@@ -18,21 +18,25 @@ function Home() {
   }, [team, articles]);
 
   return (
-    <main>
+    <Fragment>
       {!team && !articles ? (
         <SkeletonOverlay />
       ) : (
         <Fragment>
-          <Hero />
-          <Nav />
-          <Team />
-          <Product />
-          <Articles articles={articles} />
-          <ContactForm />
-          <Map />
+          <header>
+            <Hero />
+            <Nav />
+          </header>
+          <main>
+            <Team />
+            <Product />
+            <Articles articles={articles} />
+            <ContactForm />
+            <Map />
+          </main>
         </Fragment>
       )}
-    </main>
+    </Fragment>
   );
 }
 

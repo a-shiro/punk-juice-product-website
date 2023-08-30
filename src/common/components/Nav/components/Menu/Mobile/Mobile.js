@@ -17,7 +17,7 @@ function Mobile() {
     <div className={styles.dropdown}>
       <Hamburger toggleDropdown={toggleDropdown} />
 
-      <ul ref={linksList} className={styles.list}>
+      <menu ref={linksList} className={styles.list}>
         <li onClick={scroll}>
           <Link to="/#hero">Home</Link>
         </li>
@@ -33,7 +33,7 @@ function Mobile() {
         <li onClick={scroll}>
           <Link to="/#contact">Contact Us</Link>
         </li>
-      </ul>
+      </menu>
 
       <div ref={background} className={styles.background}></div>
     </div>

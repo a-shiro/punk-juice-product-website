@@ -1,4 +1,4 @@
-.sectionContainer {
+.section {
   padding: 0 1rem 5rem 1rem;
 }
 
@@ -19,18 +19,27 @@
   margin-top: 2rem;
 
   display: block;
-
   transition: transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  -webkit-transition: -webkit-transform 0.8s;
+  -o-transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
 }
 
 .poster:hover {
+  -webkit-transform: scale(1.015);
+  -ms-transform: scale(1.015);
   transform: scale(1.015);
 
+  transition: -webkit-transform 0.8s;
+  -webkit-transition: -webkit-transform 0.8s;
+  -o-transition: transform 0.8s;
   transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
 }
 
 @media (width >= 1200px) {
-  .sectionContainer {
+  .section {
     padding: 0 2rem 10rem 2rem;
   }
 
@@ -41,7 +50,11 @@
 
   .posterContainer {
     display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
     justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     gap: 2rem;
   }
 }
