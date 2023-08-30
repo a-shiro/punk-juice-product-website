@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import styles from "./Heading.module.css";
 import useToggleAnimation from "../../../../../../common/hooks/useToggleAnimation";
 
@@ -11,12 +11,22 @@ function Heading() {
 
   return (
     <hgroup className={styles.container}>
-      <div obeserverbox="obeserverbox" ref={title}>
-        <h2 animation="fade-in">Join the movement...</h2>
+      <div
+        obeserverbox="obeserverbox"
+        animation="fade-in"
+        threshold={1}
+        ref={title}
+      >
+        <h2>Join the movement...</h2>
       </div>
 
-      <div obeserverbox="observerbox" ref={textLeft}>
-        <p animation="fade-in">
+      <div
+        obeserverbox="observerbox"
+        animation="fade-in"
+        threshold={window.innerWidth <= 720 ? 0 : 1}
+        ref={textLeft}
+      >
+        <p>
           Inspired by the unapologetic spirit of punk rock, this audacious drink
           is a fusion of unconventional ingredients that come together to create
           a sensory rebellion. From the first sip to the last drop,{" "}
@@ -25,8 +35,13 @@ function Heading() {
         </p>
       </div>
 
-      <div obeserverbox="obeserverbox" ref={textRight}>
-        <p animation="fade-in-200">
+      <div
+        obeserverbox="obeserverbox"
+        animation="fade-in"
+        threshold={window.innerWidth <= 720 ? 0.2 : 1}
+        ref={textRight}
+      >
+        <p>
           From the rebellious fusion of fruits to the daring hint of spice,{" "}
           <strong>Punk Juice</strong> dares you to be bold and unapologetically
           yourself. Raise your glass and join the movement – because in a world

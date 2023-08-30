@@ -19,18 +19,31 @@ function About() {
       </div>
 
       <div className={styles.textContainer}>
-        <div observerbox="observerbox" ref={title}>
-          <h3 animation="fade-in">
-            We’re - daring and unapologetically advanced.
-          </h3>
+        <div
+          observerbox="observerbox"
+          animation="fade-in"
+          threshold={1}
+          ref={title}
+        >
+          <h3>We’re - daring and unapologetically advanced.</h3>
         </div>
 
-        <div observerbox="observerbox" ref={subtitle}>
-          <p animation="fade-in">Over five years in the production business</p>
+        <div
+          observerbox="observerbox"
+          animation="fade-in"
+          threshold={1}
+          ref={subtitle}
+        >
+          <p>Over five years in the production business</p>
         </div>
 
-        <div observerbox="observerbox" ref={links}>
-          <div onClick={scroll} animation="pop-up">
+        <div
+          observerbox="observerbox"
+          animation="pop-up"
+          threshold={1}
+          ref={links}
+        >
+          <div onClick={scroll}>
             <Link to="/#articles">Read News & Events</Link>
             <Link to="/#contact">Work with Us</Link>
           </div>

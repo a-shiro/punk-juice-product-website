@@ -27,7 +27,7 @@ function Home() {
           <Nav />
           <Team />
           <Product />
-          <Articles />
+          <Articles articles={articles} />
           <ContactForm />
           <Map />
         </Fragment>

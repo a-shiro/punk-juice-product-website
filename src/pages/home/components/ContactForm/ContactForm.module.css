@@ -1,9 +1,9 @@
 .sectionContainer {
-  padding: 5em 1em;
+  padding: 5rem 1rem;
 }
 
 .title {
-  margin-bottom: 1em;
+  margin-bottom: 2rem;
 
   font-size: 2.25rem;
   text-align: center;
@@ -19,38 +19,28 @@
   max-width: 40em;
 }
 
-.contactForm label {
-  color: #717275;
-  font-weight: 600;
-}
-
-.contactForm label::after {
-  content: " *";
-  color: #dc3545;
-}
-
-.inputWrapper {
+.personalData {
   width: 100%;
 
   display: flex;
   justify-content: space-between;
 }
 
-.inputWrapper > div {
-  width: 45%;
+.personalData > div {
+  width: 47%;
 }
 
-.formField {
+.contactForm input {
   width: 100%;
-  padding: 1.2em 0.8em;
-  margin-top: 0.75em;
+  padding: 1rem;
+  margin-top: 1rem;
 
   border: 1px solid #ced4da;
 
-  transition: border 200ms ease, box-shadow 200ms ease;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
-.formField::placeholder {
+.contactForm input::placeholder {
   font-family: Montserrat, sans-serif;
   font-weight: 500;
   font-size: 1rem;
@@ -58,50 +48,54 @@
   color: #8e9093;
 }
 
-.textWrapper {
-  margin-top: 2.5em;
-  width: 100%;
+.contactForm label {
+  font-weight: 600;
+
+  color: #717275;
 }
 
-.textWrapper > textarea {
+.contactForm label::after {
+  content: " *";
+
+  color: #dc3545;
+}
+
+.descriptionContainer {
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+.descriptionContainer > textarea {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
-
-  padding: 1em;
-  margin-top: 0.75em;
+  padding: 1rem;
+  margin-top: 1rem;
 
   border: 1px solid #ced4da;
 
-  transition: border 200ms ease, box-shadow 200ms ease;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+
+  &::placeholder {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+
+    color: #8e9093;
+  }
 }
 
-.textWrapper > textarea::placeholder {
-  font-family: Montserrat, sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-
-  color: #8e9093;
-}
-
-.formField:focus,
-.textWrapper > textarea:focus {
+.contactForm input:focus,
+.contactForm textarea:focus {
   border: 1px solid rgba(203, 66, 148, 1);
   box-shadow: 0 0 0 5px rgb(255, 148, 212);
   outline: none;
 }
 
-.buttonContainer {
+.submit {
   width: 100%;
-  display: flex;
-  justify-content: center;
-
-  margin-top: 4em;
-}
-
-.buttonContainer > button {
-  width: 100%;
-  padding: 0.8em;
+  padding: 1rem;
+  margin-top: 3rem;
 
   font-family: Montserrat, sans-serif;
   font-weight: 600;
@@ -109,56 +103,42 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 
-  color: white;
   background: -webkit-linear-gradient(
     140deg,
     rgba(203, 66, 148, 1) 0%,
     rgba(208, 143, 23, 1) 100%
   );
+  color: white;
 
   border: none;
-  border-radius: 2em;
+  border-radius: 2rem;
+
+  -webkit-tap-highlight-color: transparent;
 
   cursor: pointer;
 }
 
-.buttonContainer > button:focus {
+.submit:focus {
   outline: none;
 }
 
-@media (width >= 75em) {
-  .sectionContainer {
-    padding: 10em 1em;
-  }
-
-  .title {
-    margin-bottom: 1.5em;
-    font-size: 2.8rem;
-  }
-
-  .buttonContainer > button {
-    max-width: 20em;
-    padding: 1em;
-  }
-}
-
 /* Modal */
-
 .overlay {
-  display: none;
-
-  background-color: rgba(0, 0, 0, 0.8);
-
   width: 100vw;
   height: 100vh;
+
+  display: none;
 
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  z-index: 20;
 
-  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  animation: fade-in 0.5s 0.1s both ease-out;
 }
 
 .tick {
@@ -166,42 +146,45 @@
   margin-bottom: 2rem;
 }
 
-.container {
-  text-align: center;
-
-  background-color: white;
+.modal {
+  padding: 5rem 6rem;
 
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
 
-  padding: 5rem 6rem;
+  text-align: center;
 
   border-radius: 5%;
+
+  transform: translate(-50%, -50%);
+
+  background-color: white;
 
   animation: fade-in 0.5s 0.1s both ease-out;
 }
 
-.container > p:first-of-type {
+.modal > p:first-of-type {
+  margin-bottom: 1rem;
+
   font-size: 1.75rem;
   font-weight: 500;
-  margin-bottom: 1rem;
 }
 
-.container > p:last-child {
+.modal > p:last-child {
   font-size: 1.15rem;
+
   color: gray;
 }
 
-.container > button {
-  border: gray 1px solid;
-  border-radius: 30px;
+.modal > button {
+  padding: 1rem 5rem;
+  margin-top: 3rem;
 
   font-size: 1.15rem;
 
-  padding: 1rem 5rem;
-  margin-top: 3rem;
+  border: gray 1px solid;
+  border-radius: 3rem;
 
   background-color: white;
   color: gray;
@@ -213,17 +196,36 @@
   display: block;
 }
 
+/* Media Queries */
+@media (width >= 720px) {
+  .modal {
+    padding: 5rem 10rem;
+  }
+}
+
+@media (width >= 1200px) {
+  .sectionContainer {
+    padding: 10rem 1rem;
+  }
+
+  .title {
+    margin-bottom: 4rem;
+
+    font-size: 2.8rem;
+  }
+
+  .submit {
+    max-width: 25rem;
+    margin: 4rem auto auto auto;
+  }
+}
+
+/* Animations */
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-  }
-}
-
-@media (width >= 720px) {
-  .container {
-    padding: 5rem 10rem;
   }
 }

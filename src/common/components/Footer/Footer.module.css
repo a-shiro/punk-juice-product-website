@@ -1,82 +1,81 @@
 .footer {
-    background-color: #212529;
+  padding: 5rem 1rem 2rem 1rem;
 
-    padding: 5em 1em 2em 1em;
-
+  background-color: #212529;
 }
 
 .title {
-    color: white;
+  color: white;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    font-size: 1.500rem;
-    font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: normal;
 
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
-.titleIcon, .socialIcon {
-    width: 25px;
-    display: block;
+.icon {
+  width: 1.5rem;
+  margin-right: 0.25rem;
+
+  display: block;
 }
 
-.titleIcon {
-    margin-right: .250em;
+.email,
+.copyright {
+  font-size: 1.15rem;
 
+  color: #ffffffa6;
 }
 
-.socialIcon {
-    margin-right: .750em;
+.email {
+  cursor: pointer;
+
+  transition: color 0.5s;
 }
 
-.mail, .copyright {
-    color: #FFFFFFA6;
-    font-size: 1.150rem;
-}
+.email:hover {
+  color: white;
 
-.mail {
-    cursor: pointer;
-
-    transition: color 500ms;
-}
-
-.mail:hover {
-    color: white;
-
-    transition: color 500ms;
+  transition: color 0.5s;
 }
 
 .copyright {
-    text-align: center;
-    margin: 4em 0 0 0;
+  margin-top: 4rem;
+
+  text-align: center;
 }
 
+.socials {
+  display: flex;
 
-.socialsList {
-    display: flex;
+  list-style: none;
 
-    list-style: none;
-
-    margin-top: 3em;
+  margin-top: 3rem;
 }
 
-@media (width >= 45em) {
-    .container {
-        max-width: 50em;
-        margin: auto;
-    }
+.socials img {
+  margin-right: 1rem;
 }
 
-@media (width >= 75em) {
-    .container {
-        max-width: 70em;
-    }
+@media (width >= 720px) {
+  .container {
+    max-width: 50rem;
+    margin: auto;
+  }
 }
 
-@media (width >= 95em) {
-    .container {
-        max-width: 90em;
-    }
+@media (width >= 1200px) {
+  .container {
+    max-width: 70rem;
+  }
+}
+
+@media (width >= 1520px) {
+  .container {
+    max-width: 90rem;
+  }
 }

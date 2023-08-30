@@ -1,39 +1,43 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Main.module.css";
 import useToggleAnimation from "../../../../../../common/hooks/useToggleAnimation";
-import { useRef } from "react";
 
 function Main({ article }) {
   const articleRef = useRef();
-  useToggleAnimation([articleRef]);
   const articlePath = `/article-details/${article.path}`;
 
+  useToggleAnimation([articleRef]);
+
   return (
-    <div ref={articleRef} className={styles.mainContainer} aos="fade-in">
+    <article
+      animation="fade-in"
+      threshold={0.5}
+      ref={articleRef}
+      className={styles.mainArticle}
+    >
       <div>
-        <div className={styles.imageContainer}>
+        <div className={styles.thumbnailContainer}>
           <Link to={articlePath} state={article}>
             <img
               src={article.thumbnail}
-              className={styles.articleImage}
+              className={styles.thumbnail}
               alt="article-thumbnail"
             />
           </Link>
           <div className={styles.line}></div>
-          <div className={styles.articleTag}>{article.type}</div>
+          <div className={styles.tag}>{article.type}</div>
         </div>
 
-        <div className={styles.infoContainer}>
-          <h5 className={styles.titleContainer}>
-            <Link to={articlePath} state={article}>
-              {article.heroTitle}
-            </Link>
-          </h5>
+        <footer className={styles.articleFooter}>
+          <Link to={articlePath} state={article}>
+            {article.heroTitle}
+          </Link>
 
           <span>22 hours ago</span>
-        </div>
+        </footer>
       </div>
-    </div>
+    </article>
   );
 }
 

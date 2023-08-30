@@ -1,31 +1,24 @@
-.articleContainer {
+.secondaryArticle {
   position: relative;
 }
 
-.articleImage {
+.thumbnailContainer {
+  position: relative;
+}
+
+.thumbnailContainer:hover {
+  .line {
+    width: 100%;
+    transition: width 0.5s ease;
+  }
+}
+
+.thumbnail {
   width: 100%;
+
   display: block;
+
   cursor: pointer;
-}
-
-.articleTag {
-  background: -webkit-linear-gradient(
-    140deg,
-    rgba(203, 66, 148, 1) 0%,
-    rgba(208, 143, 23, 1) 100%
-  );
-
-  color: white;
-
-  padding: 0.4em 0.8em;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.imageContainer {
-  position: relative;
 }
 
 .line {
@@ -45,69 +38,81 @@
   transition: width 1s cubic-bezier(1, 0, 0.76, 0.63);
 }
 
-.imageContainer:hover {
-  .line {
-    width: 100%;
-    transition: width 0.5s ease;
-  }
+.tag {
+  padding: 0.5rem 1rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: -webkit-linear-gradient(
+    140deg,
+    rgba(203, 66, 148, 1) 0%,
+    rgba(208, 143, 23, 1) 100%
+  );
+  color: white;
 }
 
-.infoContainer {
+.articleFooter {
   padding: 1em;
 }
 
-.titleContainer {
-  margin-bottom: 1.5em;
-  cursor: pointer;
-}
+.articleFooter a {
+  margin-bottom: 0.5rem;
 
-.titleContainer > a {
-  color: #717275;
+  display: block;
 
   font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
 
+  color: #717275;
+
   transition: color 300ms;
 }
 
-.titleContainer > a:hover {
+.articleFooter a:hover {
   color: black;
 
   transition: color 300ms;
 }
 
-.infoContainer > span {
+.articleFooter span {
   color: #929396;
 
   font-weight: 500;
 }
 
-@media (width >= 75em) {
-  .articleContainer {
+/* Media Queries */
+@media (width >= 1200px) {
+  .secondaryArticle {
     display: flex;
-    margin-bottom: 2em;
+    margin-bottom: 1rem;
   }
 
-  .articleImage {
-    width: 15.8em;
-    min-height: 11em;
-    max-height: 11em;
+  .thumbnail {
+    width: 18rem;
+    min-height: 11.5rem;
+    max-height: 11.5rem;
   }
 
-  .infoContainer {
-    max-width: 12em;
+  .articleFooter {
+    max-width: 15rem;
   }
 }
 
-@media (width >= 95em) {
-  .articleImage {
-    width: 18.8em;
-    min-height: 13em;
-    max-height: 13em;
+@media (width >= 1520px) {
+  .secondaryArticle {
+    margin-bottom: 2rem;
   }
 
-  .infoContainer {
-    max-width: 22em;
+  .thumbnail {
+    width: 20rem;
+    min-height: 14.4rem;
+    max-height: 14.4rem;
+  }
+
+  .articleFooter {
+    max-width: 21rem;
   }
 }

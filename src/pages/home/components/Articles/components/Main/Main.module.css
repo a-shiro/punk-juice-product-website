@@ -1,11 +1,21 @@
-.mainContainer {
-  position: relative;
-
-  max-width: 35em;
+.mainArticle {
+  max-width: 35rem;
   margin: auto;
 }
 
-.articleImage {
+.thumbnailContainer {
+  position: relative;
+}
+
+.thumbnailContainer:hover {
+  .line {
+    width: 100%;
+
+    transition: width 0.8s ease;
+  }
+}
+
+.thumbnail {
   width: 100%;
 
   display: block;
@@ -13,8 +23,8 @@
   cursor: pointer;
 }
 
-.articleTag {
-  padding: 0.4em 0.8em;
+.tag {
+  padding: 0.5rem 1rem;
 
   position: absolute;
   top: 0;
@@ -26,10 +36,6 @@
     rgba(208, 143, 23, 1) 100%
   );
   color: white;
-}
-
-.imageContainer {
-  position: relative;
 }
 
 .line {
@@ -49,51 +55,39 @@
   transition: width 1s cubic-bezier(1, 0, 0.76, 0.63);
 }
 
-.imageContainer:hover {
-  .line {
-    width: 100%;
-    transition: width 0.8s ease;
-  }
-}
-
-.infoContainer {
+.articleFooter {
   padding: 1em;
 }
 
-.titleContainer {
-  margin-bottom: 1.5em;
+.articleFooter a {
+  margin-bottom: 0.5rem;
 
-  cursor: pointer;
-}
+  display: block;
 
-.titleContainer > a {
-  color: #717275;
-
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   text-decoration: none;
 
-  transition: color 300ms;
+  color: #717275;
+
+  transition: color 0.3s;
 }
 
-.titleContainer > a:hover {
+.articleFooter a:hover {
   color: black;
 
-  transition: color 300ms;
+  transition: color 0.3s;
 }
 
-.infoContainer > span {
-  color: #929396;
-
+.articleFooter span {
   font-weight: 500;
+
+  color: #929396;
 }
 
-@media (width >= 95em) {
-  .mainContainer {
-    max-width: none;
-  }
-
-  .articleImage {
-    width: 41em;
+/* Media Queries */
+@media (width >= 1520px) {
+  .mainArticle {
+    max-width: 45rem;
   }
 }

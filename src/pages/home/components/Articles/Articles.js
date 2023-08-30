@@ -1,42 +1,32 @@
-import { useEffect, useRef, useState } from "react";
-import { fetchData } from "../../../../services/queries";
+import { useRef } from "react";
 import styles from "./Articles.module.css";
 import Main from "./components/Main/Main";
 import Secondary from "./components/Secondary/Secondary";
 import useToggleAnimation from "../../../../common/hooks/useToggleAnimation";
 
-function Articles({ sectionRef }) {
-  const [articles, setArticles] = useState(null);
+function Articles({ articles }) {
   const titleRef = useRef();
   useToggleAnimation([titleRef]);
 
-  useEffect(() => {
-    const getArticles = async () => {
-      const data = await fetchData("articles");
-      setArticles(data);
-    };
-
-    getArticles();
-  }, []);
-
   return (
-    <section ref={sectionRef} className={styles.sectionContainer}>
-      <div ref={titleRef} className={styles.titleContainer} aos="fade-in">
-        <h2>News & Events</h2>
+    <section id="articles" className={styles.sectionContainer}>
+      <div
+        observerbox="observerbox"
+        animation="fade-in"
+        threshold={1}
+        ref={titleRef}
+      >
+        <h2 className={styles.title}>News & Events</h2>
       </div>
 
-      {articles ? (
-        <div className={styles.articlesContainer}>
-          <Main article={articles[0]} />
+      <div className={styles.articles}>
+        <Main article={articles[0]} />
 
-          <div className={styles.secondaryContainer}>
-            <Secondary article={articles[1]} />
-            <Secondary article={articles[2]} />
-          </div>
-        </div>
-      ) : (
-        <h1>Loading Skeleton</h1>
-      )}
+        <aside>
+          <Secondary article={articles[1]} />
+          <Secondary article={articles[2]} />
+        </aside>
+      </div>
     </section>
   );
 }
