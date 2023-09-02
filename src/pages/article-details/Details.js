@@ -10,11 +10,11 @@ import Next from "./components/Next/Next";
 function Details() {
   const currentPath = useParams();
   const [article, nextArticle] = useGetPageResources(currentPath);
-  const skeletonLoading = useSkeletonLoading(currentPath);
+  // const skeletonLoading = useSkeletonLoading(currentPath);
 
   return (
     <main>
-      {skeletonLoading || article === null ? (
+      {!article ? (
         <SkeletonOverlay />
       ) : (
         <div>
