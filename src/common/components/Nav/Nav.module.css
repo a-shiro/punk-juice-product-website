@@ -14,7 +14,7 @@
   position: sticky;
   left: 0;
   top: 0;
-  z-index: 10;
+  z-index: 1;
 
   background-color: white;
 
@@ -22,8 +22,8 @@
   -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 
-.brand {
-  width: 9rem;
+.brandName {
+  width: 10rem;
   margin-left: 1rem;
 
   font-size: 1.5rem;
@@ -43,7 +43,7 @@
 }
 
 /* Media Queries */
-@media (width >= 1200px) {
+@media (width >= 1220px) {
   .navigation {
     justify-content: space-around;
     -ms-flex-pack: distribute;

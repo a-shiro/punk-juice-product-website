@@ -1,10 +1,13 @@
+// Components
 import { Link } from "react-router-dom";
-import styles from "./Desktop.module.css";
-import scroll from "../../../../../../pages/home/utils/scroll";
+// Utils
+import scroll from "../../../../../pages/home/utils/scroll";
+// CSS
+import styles from "./DesktopMenu.module.css";
 
-function Desktop() {
+function DesktopMenu() {
   return (
-    <menu className={styles.list}>
+    <menu className={styles.menu}>
       <li onClick={scroll}>
         <Link to="/#hero">Home</Link>
       </li>
@@ -24,4 +27,4 @@ function Desktop() {
   );
 }
 
-export default Desktop;
+export default DesktopMenu;

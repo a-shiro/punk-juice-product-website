@@ -1,23 +1,27 @@
+// Hooks
 import { useRef } from "react";
+// Components
 import { Link } from "react-router-dom";
-import styles from "./Mobile.module.css";
 import Hamburger from "./components/Hamburger/Hamburger";
-import scroll from "../../../../../../pages/home/utils/scroll";
+// Utils
+import scroll from "../../../../../pages/home/utils/scroll";
+// CSS
+import styles from "./MobileMenu.module.css";
 
-function Mobile() {
-  const linksList = useRef();
-  const background = useRef();
+function MobileMenu() {
+  const menuRef = useRef();
+  const menuOverlayRef = useRef();
 
   const toggleDropdown = () => {
-    linksList.current.classList.toggle(styles.listActive);
-    background.current.classList.toggle(styles.backgroundActive);
+    menuRef.current.classList.toggle(styles.menuActive);
+    menuOverlayRef.current.classList.toggle(styles.menuOverlayActive);
   };
 
   return (
     <div className={styles.dropdown}>
       <Hamburger toggleDropdown={toggleDropdown} />
 
-      <menu ref={linksList} className={styles.list}>
+      <menu ref={menuRef} className={styles.menu}>
         <li onClick={scroll}>
           <Link to="/#hero">Home</Link>
         </li>
@@ -35,9 +39,9 @@ function Mobile() {
         </li>
       </menu>
 
-      <div ref={background} className={styles.background}></div>
+      <div ref={menuOverlayRef} className={styles.menuOverlay}></div>
     </div>
   );
 }
 
-export default Mobile;
+export default MobileMenu;

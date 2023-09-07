@@ -1,3 +1,4 @@
+// CSS
 import styles from "./Hamburger.module.css";
 
 function Hamburger({ toggleDropdown }) {
