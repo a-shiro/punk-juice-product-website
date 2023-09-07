@@ -2,59 +2,63 @@
   position: relative;
 
   background-color: #d78cae;
-
-  overflow: hidden;
 }
 
-.container {
+.headerTitles {
+  width: 70%;
+
   position: absolute;
   left: 50%;
   top: 50%;
   z-index: 2;
 
-  text-align: center;
-
-  color: #fff;
-
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  color: white;
 }
 
-.container > h1 {
+.headerTitles > h1 {
   margin-bottom: 1rem;
 
   font-size: 2rem;
 
-  -webkit-animation: pop-up 0.4s 1.2s ease-out both;
-  animation: pop-up 0.4s 1.2s ease-out both;
+  -webkit-animation: pop-up 0.5s 1.2s ease-out both;
+  animation: pop-up 0.5s 1.2s ease-out both;
 }
 
-.container > p {
+.headerTitles > h2 {
   font-size: 1rem;
+  font-weight: 500;
 
-  -webkit-animation: slide-up 0.4s 1.4s ease-out both;
-  animation: slide-up 0.4s 1.4s ease-out both;
+  -webkit-animation: slide-up 0.5s 1.4s ease-out both;
+  animation: slide-up 0.5s 1.4s ease-out both;
 }
 
-.container strong {
-  padding-bottom: 2px;
+.headerTitles strong {
+  padding-bottom: 0.13rem;
 
   border-bottom: 2px solid white;
 }
 
 .backgroundVideo {
   width: 100%;
+  aspect-ratio: 4 / 2;
+
+  -o-object-fit: cover;
+
+  object-fit: cover;
 }
 
 .overlay {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 1;
 
+  background: -o-linear-gradient(bottom, rgb(35, 35, 35), transparent 95%);
   background: -webkit-gradient(
     linear,
     left bottom,
@@ -62,28 +66,26 @@
     from(rgb(35, 35, 35)),
     color-stop(95%, transparent)
   );
-
-  background: -o-linear-gradient(bottom, rgb(35, 35, 35), transparent 95%);
   background: linear-gradient(to top, rgb(35, 35, 35), transparent 95%);
 }
 
 /* Media Queries */
 @media (width >= 720px) {
-  .container > h1 {
+  .headerTitles > h1 {
     font-size: 3rem;
   }
 
-  .container > p {
+  .headerTitles > h2 {
     font-size: 1.25rem;
   }
 }
 
-@media (width >= 1200px) {
-  .container > h1 {
+@media (width >= 1220px) {
+  .headerTitles > h1 {
     font-size: 4.5rem;
   }
 
-  .container > p {
+  .headerTitles > h2 {
     font-size: 1.5rem;
   }
 
@@ -100,8 +102,8 @@
   0% {
     opacity: 0;
 
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
   }
   100% {
     opacity: 1;
@@ -110,12 +112,13 @@
     transform: scale(1);
   }
 }
+
 @keyframes pop-up {
   0% {
     opacity: 0;
 
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
   }
   100% {
     opacity: 1;
@@ -129,8 +132,8 @@
   0% {
     opacity: 0;
 
-    -webkit-transform: translateY(5rem);
-    transform: translateY(5rem);
+    -webkit-transform: translateY(3rem);
+    transform: translateY(3rem);
   }
   100% {
     opacity: 1;
@@ -144,8 +147,8 @@
   0% {
     opacity: 0;
 
-    -webkit-transform: translateY(5rem);
-    transform: translateY(5rem);
+    -webkit-transform: translateY(8rem);
+    transform: translateY(8rem);
   }
   100% {
     opacity: 1;
