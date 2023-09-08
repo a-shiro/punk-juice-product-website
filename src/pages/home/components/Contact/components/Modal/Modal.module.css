@@ -1,0 +1,78 @@
+.modal {
+  width: 95%;
+  max-width: 35rem;
+  padding: 5rem 0;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  text-align: center;
+
+  border-radius: 2rem;
+
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+
+  background-color: white;
+
+  animation: drop-in 0.4s both ease-out;
+  -webkit-animation: drop-in 0.4s both ease-out;
+}
+
+.tick {
+  width: 10rem;
+  margin-bottom: 2rem;
+}
+
+.modal > h1 {
+  margin-bottom: 1rem;
+
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.modal > p {
+  font-size: 1.15rem;
+
+  color: gray;
+}
+
+.modal > button {
+  padding: 1rem 5rem;
+  margin-top: 3rem;
+
+  font-size: 1.15rem;
+
+  border: gray 1px solid;
+  border-radius: 3rem;
+
+  background-color: white;
+  color: gray;
+
+  cursor: pointer;
+}
+
+/* Animations */
+@-webkit-keyframes drop-in {
+  0% {
+    top: 40%;
+    opacity: 0;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes drop-in {
+  0% {
+    top: 40%;
+    opacity: 0;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}

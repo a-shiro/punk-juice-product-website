@@ -1,0 +1,145 @@
+.form {
+  max-width: 40em;
+  margin: auto;
+}
+
+.form label {
+  font-weight: 600;
+
+  color: #717275;
+}
+
+.form label::after {
+  content: " *";
+
+  color: #dc3545;
+}
+
+.form input {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0 1rem 0;
+
+  border: 1px solid #ced4da;
+  border-radius: 0; /* For IOS issues*/
+  -moz-appearance: none;
+  -webkit-appearance: none; /* For IOS issues */
+  appearance: none; /* For IOS issues */
+
+  font-size: 1rem;
+
+  transition: border 0.2s ease, box-shadow 0.2s ease,
+    -webkit-box-shadow 0.2s ease;
+}
+
+.form input::placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+
+  color: #8e9093;
+}
+
+.form > div:first-of-type input {
+  text-transform: capitalize;
+}
+
+.form textarea {
+  min-width: 100%;
+  max-width: 100%;
+
+  padding: 1rem;
+  margin-top: 0.5rem;
+
+  font-size: 1rem;
+
+  border: 1px solid #ced4da;
+  border-radius: 0; /* For IOS issues*/
+  -moz-appearance: none;
+  -webkit-appearance: none; /* For IOS issues */
+  appearance: none; /* For IOS issues */
+
+  -webkit-transition: border 0.2s ease, -webkit-box-shadow 0.2s ease;
+  -o-transition: border 0.2s ease, box-shadow 0.2s ease;
+  transition: border 0.2s ease, box-shadow 0.2s ease,
+    -webkit-box-shadow 0.2s ease;
+}
+
+.form textarea::placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+
+  color: #8e9093;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border: 1px solid rgba(203, 66, 148, 1);
+
+  -webkit-box-shadow: 0 0 0 5px rgb(255, 148, 212);
+  box-shadow: 0 0 0 5px rgb(255, 148, 212);
+
+  outline: none;
+}
+
+.submit {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  background: -webkit-linear-gradient(
+    140deg,
+    rgba(203, 66, 148, 1) 0%,
+    rgba(208, 143, 23, 1) 100%
+  );
+  color: white;
+
+  border: none;
+  border-radius: 2rem;
+
+  -webkit-tap-highlight-color: transparent;
+
+  cursor: pointer;
+}
+
+.submit:focus {
+  outline: none;
+}
+
+/* Media Queries */
+@media (min-width: 720px) {
+  .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .form > div:last-of-type {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .submit {
+    max-width: 25rem;
+    margin: auto;
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 1220px) {
+  .submit {
+    margin-top: 3rem;
+  }
+}
