@@ -1,0 +1,45 @@
+.infoContainer {
+  padding: 4rem 1rem;
+
+  background-color: #212529;
+  color: white;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.subtitle {
+  margin-bottom: 2rem;
+
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+.infoContainer a {
+  display: block;
+
+  font-weight: 600;
+
+  color: white;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Media Queries */
+@media (width >= 1220px) {
+  .infoContainer {
+    width: 30%;
+    padding: 5rem 2rem;
+  }
+}

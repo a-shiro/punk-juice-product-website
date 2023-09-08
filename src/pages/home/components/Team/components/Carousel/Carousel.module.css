@@ -1,0 +1,55 @@
+.carousel {
+  width: 100%;
+  min-height: 30rem;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.controls {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1rem;
+
+  -webkit-tap-highlight-color: transparent;
+
+  cursor: pointer;
+}
+
+.controls > img {
+  width: 3.5rem;
+  padding: 1rem;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  border: none;
+  border-radius: 100%;
+
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.controls > img:first-child {
+  margin-right: 0.5rem;
+
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+@media (width >= 1220px) {
+  .carousel {
+    width: 50%;
+  }
+
+  .controls {
+    bottom: 1.5rem;
+    right: 2rem;
+  }
+}
