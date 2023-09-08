@@ -4,30 +4,23 @@
   background-color: #212529;
 }
 
-.title {
-  color: white;
-
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
-  display: flex;
-  align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+.address {
+  display: inline-block;
+  vertical-align: middle;
 
   font-size: 1.5rem;
   font-weight: 500;
   font-style: normal;
 
-  margin-bottom: 1em;
+  color: white;
 }
 
 .icon {
   width: 1.5rem;
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .email,
@@ -38,11 +31,15 @@
 }
 
 .email {
-  cursor: pointer;
+  margin: 1rem 0 5rem 0;
+
+  display: block;
 
   transition: color 0.5s;
   -webkit-transition: color 0.5s;
   -o-transition: color 0.5s;
+
+  cursor: pointer;
 }
 
 .email:hover {
@@ -59,36 +56,14 @@
   text-align: center;
 }
 
-.socials {
-  display: flex;
-  display: -webkit-box;
-  display: -ms-flexbox;
-
-  list-style: none;
-
-  margin-top: 3rem;
-}
-
-.socials img {
-  margin-right: 1rem;
+.socials > li {
+  display: inline-block;
+  margin-right: 0.5rem;
 }
 
 /* Media Queries */
-@media (width >= 720px) {
-  .container {
-    max-width: 50rem;
-    margin: auto;
-  }
-}
-
-@media (width >= 1200px) {
-  .container {
-    max-width: 70rem;
-  }
-}
-
-@media (width >= 1520px) {
-  .container {
-    max-width: 90rem;
+@media (width >= 1220px) {
+  .footer {
+    padding: 8rem 8rem 2rem 8rem;
   }
 }
