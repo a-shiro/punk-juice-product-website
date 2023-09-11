@@ -2,7 +2,7 @@
 import { useFetchData } from "../../../../hooks/useFetchData";
 // Components
 import LazyImage from "../../../../../../common/components/LazyImage/LazyImage";
-import ShowcaseSkeleton from "./components/ShowcaseSkeleton/ShowcaseSkeleton";
+import LoadingSkeleton from "./components/LoadingSkeleton/LoadingSkeleton";
 // CSS
 import styles from "./Showcase.module.css";
 
@@ -12,7 +12,7 @@ function Showcase() {
   return (
     <div className={styles.showcaseContainer}>
       {!images ? (
-        <ShowcaseSkeleton />
+        <LoadingSkeleton />
       ) : (
         <>
           <div className={styles.column}>

@@ -1,6 +1,6 @@
-import styles from "./ShowcaseSkeleton.module.css";
+import styles from "./LoadingSkeleton.module.css";
 
-function ShowcaseSkeleton() {
+function LoadingSkeleton() {
   return (
     <div className={styles.skeleton}>
       <div className={styles.itemsWrapper}>
@@ -15,4 +15,4 @@ function ShowcaseSkeleton() {
   );
 }
 
-export default ShowcaseSkeleton;
+export default LoadingSkeleton;

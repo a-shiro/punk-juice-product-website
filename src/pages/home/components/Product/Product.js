@@ -1,5 +1,7 @@
-import styles from "./Product.module.css";
+// Components
 import Showcase from "./components/Showcase/Showcase";
+// CSS
+import styles from "./Product.module.css";
 
 function Product() {
   return (
