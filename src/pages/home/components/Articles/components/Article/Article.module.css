@@ -1,0 +1,151 @@
+.blurLoad::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  -webkit-animation: pulse 2s infinite ease-in-out;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.blurLoad.loaded::before {
+  content: none;
+}
+
+.blurLoad {
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.loaded {
+  opacity: 1;
+}
+
+.blurLoad.loaded > img {
+  opacity: 1;
+}
+
+.thumbnail::before {
+  content: "";
+
+  width: 0%;
+  height: 5px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  background: -webkit-linear-gradient(
+    140deg,
+    rgba(203, 66, 148, 1) 0%,
+    rgba(208, 143, 23, 1) 100%
+  );
+
+  transition: width 1s cubic-bezier(1, 0, 0.76, 0.63);
+  -webkit-transition: width 1s cubic-bezier(1, 0, 0.76, 0.63);
+  -o-transition: width 1s cubic-bezier(1, 0, 0.76, 0.63);
+}
+
+.thumbnail:hover::before {
+  width: 100%;
+
+  -webkit-transition: width 0.5s ease;
+  -o-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+
+.thumbnail {
+  position: relative;
+}
+
+.thumbnail img {
+  width: 100%;
+
+  display: block;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out,
+    -webkit-transform 0.5s ease-in-out;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  background: -webkit-linear-gradient(
+    140deg,
+    rgba(203, 66, 148, 1) 0%,
+    rgba(208, 143, 23, 1) 100%
+  );
+  color: white;
+}
+
+.details {
+  padding: 1em;
+}
+
+.details > a {
+  margin-bottom: 0.5rem;
+
+  display: block;
+
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: #717275;
+
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.details > a:hover {
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+
+  color: black;
+}
+
+.details > span {
+  font-weight: 500;
+
+  color: #929396;
+}
+
+/* Animations */
+@-webkit-keyframes pulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}

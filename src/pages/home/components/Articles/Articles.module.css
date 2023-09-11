@@ -1,10 +1,13 @@
 .section {
-  padding: 5rem 1rem 5rem 1rem;
+  padding: 5rem 1rem;
+  margin-top: 5rem;
 
   background-color: #f9f9f9;
 }
 
 .title {
+  margin-bottom: 2rem;
+
   font-size: 2.25rem;
   font-weight: 700;
   text-align: center;
@@ -13,13 +16,17 @@
 .articles {
   max-width: 35rem;
   margin: auto;
-  margin-top: 2rem;
+}
+
+.aside > article {
+  margin-top: 1rem;
 }
 
 /* Media Queries */
-@media (width >= 1200px) {
-  .sectionContainer {
-    padding: 10rem 2rem 10rem 2rem;
+@media (width >= 1220px) {
+  .section {
+    padding: 10rem 2rem;
+    margin-top: 10rem;
   }
 
   .title {
@@ -29,17 +36,69 @@
   }
 
   .articles {
-    max-width: 70rem;
-    margin: auto;
+    max-width: 80rem;
 
     display: flex;
     display: -webkit-box;
     display: -ms-flexbox;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  /* For main article */
+  .articles > article {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  .articles > article img {
+    width: 40.5rem;
+  }
+
+  /* For aside articles */
+  .aside > article {
+    margin: 0 0 1rem 1rem;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .aside > article img {
+    width: 20rem;
   }
 }
 
 @media (width >= 1520px) {
   .articles {
-    max-width: 90rem;
+    max-width: 95rem;
+  }
+
+  /* For main article */
+  .articles > article img {
+    width: 50.3rem;
+  }
+
+  .articles > article a {
+    font-size: 1.5rem;
+  }
+
+  .articles > article span {
+    font-size: 1.25rem;
+  }
+
+  /* For aside articles */
+  .aside > article img {
+    width: 25rem;
+  }
+
+  .aside > article a {
+    font-size: 1.35rem;
+  }
+
+  .aside > article span {
+    font-size: 1.15rem;
   }
 }

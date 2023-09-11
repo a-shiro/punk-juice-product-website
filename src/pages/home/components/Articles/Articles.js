@@ -1,32 +1,28 @@
-import { useRef } from "react";
+// Hooks
+import { useFetchData } from "../../hooks/useFetchData";
+// Components
+import Article from "./components/Article/Article";
+import LoadingSkeleton from "./components/LoadingSkeleton/LoadingSkeleton";
+// CSS
 import styles from "./Articles.module.css";
-import Main from "./components/Main/Main";
-import Secondary from "./components/Secondary/Secondary";
-import useToggleAnimation from "../../../../common/hooks/useToggleAnimation";
 
-function Articles({ articles }) {
-  const titleRef = useRef();
-  useToggleAnimation([titleRef]);
-
+function Articles() {
+  const articles = useFetchData("articles");
   return (
     <section id="articles" className={styles.section}>
-      <div
-        observerbox="observerbox"
-        animation="fade-in"
-        threshold={1}
-        ref={titleRef}
-      >
-        <h2 className={styles.title}>News & Events</h2>
-      </div>
+      <h2 className={styles.title}>News & Events</h2>
 
-      <div className={styles.articles}>
-        <Main article={articles[0]} />
-
-        <aside>
-          <Secondary article={articles[1]} />
-          <Secondary article={articles[2]} />
-        </aside>
-      </div>
+      {!articles ? (
+        <LoadingSkeleton />
+      ) : (
+        <div className={styles.articles}>
+          <Article article={articles[0]} />
+          <aside className={styles.aside}>
+            <Article article={articles[1]} />
+            <Article article={articles[2]} />
+          </aside>
+        </div>
+      )}
     </section>
   );
 }

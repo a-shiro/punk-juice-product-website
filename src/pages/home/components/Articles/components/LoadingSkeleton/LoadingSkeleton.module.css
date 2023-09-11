@@ -1,0 +1,77 @@
+.skeleton {
+  max-width: 35rem;
+  margin: auto;
+}
+
+.skeleton div {
+  aspect-ratio: 4 / 2.7;
+  margin-top: 2rem;
+
+  background-color: rgba(185, 185, 185);
+
+  -webkit-animation: pulse 2s ease-in-out infinite;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@media (min-width: 1220px) {
+  .skeleton {
+    max-width: 80rem;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .skeleton > div {
+    width: 40.5rem;
+    margin: 0;
+  }
+
+  .skeleton > aside > div {
+    width: 20rem;
+    margin: 0 0 2rem 2rem;
+  }
+
+  .skeleton > aside > div:last-child {
+    margin: 0 0 0 2rem;
+  }
+}
+
+@media (min-width: 1520px) {
+  .skeleton {
+    max-width: 95rem;
+  }
+
+  .skeleton > div {
+    width: 50.3rem;
+    margin: 0;
+  }
+
+  .skeleton > aside > div {
+    width: 25rem;
+  }
+}
+
+/* Animations */
+@-webkit-keyframes pulse {
+  0% {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
