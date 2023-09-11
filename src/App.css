@@ -1,21 +1,53 @@
-* {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: Montserrat, sans-serif;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
 }
 
-body,
+a,
+button {
+  cursor: revert;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6
+h6,
 p,
-ul 
-{
-    padding: 0;
-    margin: 0;
+ol,
+ul,
+menu {
+  padding: 0;
+  margin: 0;
+}
+
+button,
+optgroup,
+select {
+  font-family: Montserrat, sans-serif;
+}
+
+::placeholder {
+  font-family: Montserrat, sans-serif;
 }
