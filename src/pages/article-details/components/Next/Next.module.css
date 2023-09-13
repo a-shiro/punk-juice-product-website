@@ -1,45 +1,58 @@
-.sectionContainer {
-    background-color: #f9f9f9;
+.section {
+  padding: 5rem 0.5rem;
 
-    padding: 6em 1em;
+  text-align: center;
+
+  background-color: #f9f9f9;
 }
 
-.container {
-    text-align: center;
+.section > p {
+  margin-bottom: 1rem;
+
+  font-size: 1.5rem;
+
+  color: #565758;
 }
 
-.container > span {
-    font-size: 1.250rem;
-    color: #212529;
+.section > a {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+
+  color: #565758;
 }
 
-.titleNext {
-    margin-top: .500em;
-    font-size: 1.650rem;
+.section > a:hover {
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+
+  color: #212529;
 }
 
-.titleNext > a {
-    color: #565758;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 300ms;
+@media (min-width: 720px) {
+  .section > p {
+    font-size: 1.75rem;
+  }
+
+  .section > a {
+    font-size: 1.75rem;
+  }
 }
 
-.titleNext > a:hover {
-    color: #212529;
-    transition: color 300ms;
-}
+@media (min-width: 1220px) {
+  .section {
+    padding: 10rem 0;
+  }
 
-@media (width >= 75em) {
-    .sectionContainer {
-        padding: 10em 0;
-    }
+  .section > p {
+    font-size: 2rem;
+  }
 
-    .container > span {
-        font-size: 1.500rem;
-    }
-
-    .titleNext {
-        font-size: 2.250rem;
-    }
+  .section > a {
+    font-size: 2rem;
+  }
 }

@@ -1,6 +1,6 @@
-import styles from "./SkeletonOverlay.module.css";
+import styles from "./LoadingOverlay.module.css";
 
-function SkeletonOverlay() {
+function LoadingOverlay() {
   return (
     <div className={styles.overlay}>
       <div className={styles.container}>
@@ -15,4 +15,4 @@ function SkeletonOverlay() {
   );
 }
 
-export default SkeletonOverlay;
+export default LoadingOverlay;

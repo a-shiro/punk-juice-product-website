@@ -1,31 +1,22 @@
-import { useRef } from "react";
+// Components
+import { Fragment } from "react";
+// CSS
 import styles from "./Article.module.css";
-import Paragraph from "./components/Paragraph";
-import useToggleAnimation from "../../../../common/hooks/useToggleAnimation";
 
 function Article({ article }) {
-  const titleRef = useRef();
-  useToggleAnimation([titleRef]);
-
   return (
-    <section className={styles.sectionContainer}>
-      <div className={styles.container}>
-        <div ref={titleRef} aos="fade-in">
-          <h2 className={styles.title}>{article?.textTitle}</h2>
-        </div>
+    <section className={styles.section}>
+      <h1 className={styles.title}>{article?.textTitle}</h1>
 
-        <div>
-          {article?.textArray.map((text, index) => {
-            return (
-              <Paragraph
-                text={text}
-                image={article.textImage}
-                paragraphIndex={index}
-                key={index}
-              />
-            );
-          })}
-        </div>
+      <div className={styles.textContainer}>
+        {article?.textArray.map((text, index) => {
+          return (
+            <Fragment key={index}>
+              <p>{text}</p>
+              {index === 2 && <img src={article.textImage} alt="" />}
+            </Fragment>
+          );
+        })}
       </div>
     </section>
   );

@@ -1,49 +1,68 @@
-.sectionContainer {
-    padding: 5em 1em;
+.section {
+  margin: 5rem 1rem;
 }
 
 .container {
-    max-width: 55ch;
-    margin: auto;
+  max-width: 55ch;
+  margin: auto;
 }
 
 .title {
-    font-size: 2.250rem;
-    margin-bottom: 1em;
-    transform: translateY(150px);
+  font-size: 2rem;
+  text-align: center;
 }
 
-.sectionContainer p {
-    font-size: 1.250rem;
-    line-height: 1.500em;
-    color: #717275;
-    transform: translateY(150px);
+.textContainer p {
+  margin-top: 1rem;
+
+  font-size: 1.25rem;
+  line-height: 1.5em;
+
+  color: #717275;
 }
 
-.articleImage {
-    width: 100%;
-    display: block;
+.textContainer img {
+  width: 100%;
+  margin: 1rem 0;
 }
 
-@media (width >= 45em) {
-    .articleImage {
-        width: 50%;
-        height: 100%;
-        margin: 1em;
-        float: right;
-    }
+@media (min-width: 720px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .textContainer {
+    max-width: 80ch;
+    margin: auto;
+  }
+
+  .textContainer p {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+  }
+
+  .textContainer img {
+    width: 50%;
+    margin: 2rem;
+    float: right;
+  }
 }
 
-@media (width >= 75em) {
-    .sectionContainer {
-        padding: 10em 0;
-    }
+@media (min-width: 1220px) {
+  .section {
+    padding: 10em 0;
+  }
 
-    .container {
-        max-width: 80ch;
-    }
+  .title {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+  }
 
-    .title {
-        font-size: 3rem;
-    }
+  .textContainer {
+    max-width: 100ch;
+  }
+
+  .textContainer p {
+    font-size: 1.35rem;
+  }
 }
