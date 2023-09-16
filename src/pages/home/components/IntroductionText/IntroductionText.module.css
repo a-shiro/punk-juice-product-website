@@ -6,6 +6,12 @@
 .title {
   font-size: 2.25rem;
   text-align: center;
+
+  opacity: 0;
+}
+
+.textContainer {
+  opacity: 0;
 }
 
 .textContainer > p {

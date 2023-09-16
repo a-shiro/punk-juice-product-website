@@ -1,12 +1,22 @@
+// Hooks
+import { useRef } from "react";
+import useTriggerAnimation from "../../../../common/hooks/useTriggerAnimation";
 // CSS
 import styles from "./IntroductionText.module.css";
 
 function IntroductionText() {
+  const title = useRef();
+  const text = useRef();
+
+  useTriggerAnimation([title, text]);
+
   return (
     <section className={styles.section}>
-      <h1 className={styles.title}>Join the movement...</h1>
+      <h1 ref={title} className={styles.title}>
+        Join the movement...
+      </h1>
 
-      <div className={styles.textContainer}>
+      <div ref={text} className={styles.textContainer}>
         <p>
           Inspired by the unapologetic spirit of punk rock, this audacious drink
           is a fusion of unconventional ingredients that come together to create
