@@ -15,11 +15,10 @@ function triggerAnimation(entries, observer) {
 
 function createObserver(elements) {
   const observer = new IntersectionObserver(triggerAnimation, {
-    threshold: 1,
+    threshold: window.innerWidth <= 720 ? 0.5 : 1,
   });
 
   elements.map((element) => {
-    console.log(element.current);
     element.current && observer.observe(element.current);
   });
 }

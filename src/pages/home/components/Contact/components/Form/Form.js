@@ -1,10 +1,15 @@
 // Hooks
-import { useState } from "react";
+import { useRef, useState } from "react";
+import useTriggerAnimation from "../../../../../../common/hooks/useTriggerAnimation";
 // CSS
 import parentStyles from "../../Contact.module.css";
 import styles from "./Form.module.css";
 
 function Form({ modalRef }) {
+  const form = useRef();
+
+  useTriggerAnimation([form]);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,7 +32,7 @@ function Form({ modalRef }) {
   };
 
   return (
-    <form onSubmit={submit} className={styles.form} method="post">
+    <form ref={form} onSubmit={submit} className={styles.form} method="post">
       <div>
         <label htmlFor="name">Name</label>
         <input
