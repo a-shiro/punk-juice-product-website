@@ -1,13 +1,25 @@
 // Hooks
-import { useFetchData } from "../../../../hooks/useFetchData";
+import { useEffect, useState } from "react";
 // Components
 import LazyImage from "../../../../../../common/components/LazyImage/LazyImage";
 import LoadingSkeleton from "./components/LoadingSkeleton/LoadingSkeleton";
 // CSS
 import styles from "./Showcase.module.css";
+// Data
+import { fetchData } from "../../../../../../services/queries";
 
 function Showcase() {
-  const images = useFetchData("product");
+  const [images, setImages] = useState();
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await fetchData("product");
+
+      setImages(data);
+    };
+
+    getData();
+  }, []);
 
   return (
     <div className={styles.showcaseContainer}>

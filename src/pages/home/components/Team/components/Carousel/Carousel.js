@@ -1,16 +1,28 @@
 // Components
 import Card from "./components/Card";
 // Hooks
+import { useEffect, useState } from "react";
 import useCarousel from "./hooks/useCarousel";
-import { useFetchData } from "../../../../hooks/useFetchData";
+// Data
+import { fetchData } from "../../../../../../services/queries";
 // CSS
 import styles from "./Carousel.module.css";
 // Static files
 import arrowIcon from "../../../../../../assets/icons/arrow.png";
 
 function Carousel() {
-  const team = useFetchData("team");
+  const [team, setTeam] = useState();
   const changeCard = useCarousel(team);
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await fetchData("team");
+
+      setTeam(data);
+    };
+
+    getData();
+  }, []);
 
   return (
     <div className={styles.carousel}>
