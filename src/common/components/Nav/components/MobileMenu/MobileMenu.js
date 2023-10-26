@@ -21,7 +21,7 @@ function MobileMenu() {
     <div className={styles.dropdown}>
       <Hamburger toggleDropdown={toggleDropdown} />
 
-      <menu ref={menuRef} className={styles.menu}>
+      <ul ref={menuRef} className={styles.menu}>
         <li onClick={scroll}>
           <Link to="/#hero">Home</Link>
         </li>
@@ -37,7 +37,7 @@ function MobileMenu() {
         <li onClick={scroll}>
           <Link to="/#contact">Contact Us</Link>
         </li>
-      </menu>
+      </ul>
 
       <div ref={menuOverlayRef} className={styles.menuOverlay}></div>
     </div>
@@ -45,3 +45,5 @@ function MobileMenu() {
 }
 
 export default MobileMenu;
+
+// TODO: Add navigation bar closing when clicked to navigate to a section

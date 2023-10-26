@@ -7,7 +7,7 @@ import styles from "./DesktopMenu.module.css";
 
 function DesktopMenu() {
   return (
-    <menu className={styles.menu}>
+    <ul className={styles.menu}>
       <li onClick={scroll}>
         <Link to="/#hero">Home</Link>
       </li>
@@ -23,7 +23,7 @@ function DesktopMenu() {
       <li onClick={scroll}>
         <Link to="/#contact">Contact Us</Link>
       </li>
-    </menu>
+    </ul>
   );
 }
 
