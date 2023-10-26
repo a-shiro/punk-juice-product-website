@@ -8,7 +8,7 @@ function getSectionId(hash) {
 function scroll() {
   const id = getSectionId(window.location.hash);
 
-  return document.getElementById(id)?.scrollIntoView();
+  return document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 }
 
 export default scroll;
