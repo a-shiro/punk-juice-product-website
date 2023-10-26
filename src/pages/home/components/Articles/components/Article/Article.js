@@ -19,7 +19,7 @@ function Article({ article }) {
               blurryLoading: styles.blurLoad,
               completedLoading: styles.loaded,
               image: styles.poster,
-              aspectRatio: "4 / 2",
+              aspectRatio: "4 / 2.65",
             }}
           />
         </Link>

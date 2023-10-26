@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
 
-function LazyImage({ classList, src, srcBlurry, srcSet, sizes, alt }) {
+function LazyImage({ src, srcBlurry, srcSet, sizes, alt, stylesList }) {
   const blurDivRef = useRef();
   const imageRef = useRef();
 
   function loaded() {
-    blurDivRef.current.classList.add(classList.completedLoading);
+    blurDivRef.current?.classList.add(stylesList.completedLoading);
   }
 
   useEffect(() => {
@@ -19,14 +19,16 @@ function LazyImage({ classList, src, srcBlurry, srcSet, sizes, alt }) {
   return (
     <div
       ref={blurDivRef}
-      className={classList.blurryLoading}
+      className={`${stylesList.blurryLoading}`}
       style={{
         backgroundImage: `url("${srcBlurry}")`,
+        aspectRatio: stylesList.aspectRatio,
       }}
     >
       <img
         ref={imageRef}
-        className={classList.image}
+        className={stylesList.image}
+        style={{ aspectRatio: stylesList.aspectRatio }}
         src={src}
         srcSet={srcSet}
         sizes={sizes}

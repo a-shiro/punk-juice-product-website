@@ -36,7 +36,7 @@
   }
 
   .articles {
-    max-width: 78rem;
+    max-width: 75rem;
 
     display: flex;
     display: -webkit-box;
@@ -68,13 +68,13 @@
   }
 
   .aside > article img {
-    width: 20rem;
+    width: 19.5rem;
   }
 }
 
 @media (width >= 1520px) {
   .articles {
-    max-width: 95rem;
+    max-width: 90rem;
   }
 
   /* For main article */
@@ -92,7 +92,7 @@
 
   /* For aside articles */
   .aside > article img {
-    width: 25rem;
+    width: 24.4rem;
   }
 
   .aside > article a {
