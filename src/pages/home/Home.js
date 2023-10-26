@@ -1,42 +1,36 @@
-import { Fragment, useEffect } from "react";
+// Hooks
+import { useEffect } from "react";
+// Components
 import Hero from "./components/Hero/Hero";
 import Nav from "../../common/components/Nav/Nav";
+import IntroductionText from "./components/IntroductionText/IntroductionText";
 import Team from "./components/Team/Team";
 import Product from "./components/Product/Product";
 import Articles from "./components/Articles/Articles";
-import ContactForm from "./components/ContactForm/ContactForm";
+import Contact from "./components/Contact/Contact";
 import Map from "./components/Map/Map";
-import SkeletonOverlay from "../../common/components/SkeletonOverlay/SkeletonOverlay";
-import useGetData from "./hooks/useGetData";
+// Utils
 import scroll from "./utils/scroll";
 
 function Home() {
-  const [team, articles] = useGetData();
-
   useEffect(() => {
     scroll();
-  }, [team, articles]);
+  }, []);
 
   return (
-    <Fragment>
-      {!team && !articles ? (
-        <SkeletonOverlay />
-      ) : (
-        <Fragment>
-          <header>
-            <Hero />
-            <Nav />
-          </header>
-          <main>
-            <Team />
-            <Product />
-            <Articles articles={articles} />
-            <ContactForm />
-            <Map />
-          </main>
-        </Fragment>
-      )}
-    </Fragment>
+    <>
+      <header>
+        <Hero />
+      </header>
+
+      <Nav />
+      <IntroductionText />
+      <Team />
+      <Product />
+      <Articles />
+      <Contact />
+      <Map />
+    </>
   );
 }
 

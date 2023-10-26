@@ -1,12 +1,17 @@
+// Components
 import { BrowserRouter as Router } from "react-router-dom";
-import RoutesManager from "./routes/Routes";
 import Footer from "./common/components/Footer/Footer";
+import RoutesManager from "./routes/Routes";
+// CSS
 import "./App.css";
 
 function App() {
   return (
     <Router>
-      <RoutesManager />
+      <main>
+        <RoutesManager />
+      </main>
+
       <Footer />
     </Router>
   );
