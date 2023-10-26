@@ -1,5 +1,9 @@
 .section {
+  max-height: 92.5vh;
+
   position: relative;
+
+  overflow: hidden;
 
   background-color: #d78cae;
 }
@@ -46,10 +50,9 @@
 
 .backgroundVideo {
   width: 100%;
-  aspect-ratio: 4 / 2;
+  aspect-ratio: 4 / 2.5;
 
   -o-object-fit: cover;
-
   object-fit: cover;
 }
 
@@ -87,13 +90,6 @@
 
   .headerTitles > h2 {
     font-size: 1.5rem;
-  }
-
-  .backgroundVideo {
-    height: 92vh;
-
-    -o-object-fit: cover;
-    object-fit: cover;
   }
 }
 

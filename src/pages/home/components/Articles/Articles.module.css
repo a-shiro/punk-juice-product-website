@@ -36,7 +36,7 @@
   }
 
   .articles {
-    max-width: 80rem;
+    max-width: 78rem;
 
     display: flex;
     display: -webkit-box;
@@ -55,6 +55,7 @@
 
   .articles > article img {
     width: 40.5rem;
+    margin: auto;
   }
 
   /* For aside articles */
