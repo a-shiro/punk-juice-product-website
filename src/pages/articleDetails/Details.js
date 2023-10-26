@@ -23,10 +23,7 @@ function Details() {
             <title>Punk Juice - {article.heroTitle}</title>
           </Helmet>
 
-          <header>
-            <Hero article={article} />
-          </header>
-
+          <Hero article={article} />
           <Nav />
           <Article article={article} />
           <Next title={nextArticle.heroTitle} path={nextArticle.path} />

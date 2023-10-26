@@ -24,10 +24,7 @@ function Home() {
         <title>Punk Juice - Home</title>
       </Helmet>
 
-      <header>
-        <Hero />
-      </header>
-
+      <Hero />
       <Nav />
       <IntroductionText />
       <Team />
