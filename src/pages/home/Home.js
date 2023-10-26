@@ -1,6 +1,7 @@
 // Hooks
 import { useEffect } from "react";
 // Components
+import { Helmet } from "react-helmet-async";
 import Hero from "./components/Hero/Hero";
 import Nav from "../../common/components/Nav/Nav";
 import IntroductionText from "./components/IntroductionText/IntroductionText";
@@ -19,6 +20,10 @@ function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>Punk Juice - Home</title>
+      </Helmet>
+
       <header>
         <Hero />
       </header>

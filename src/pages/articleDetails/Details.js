@@ -2,6 +2,7 @@
 import { useParams } from "react-router-dom";
 import useGetResources from "./hooks/useGetResources";
 // Components
+import { Helmet } from "react-helmet-async";
 import LoadingOverlay from "../../common/components/LoadingOverlay/LoadingOverlay";
 import Hero from "./components/Hero/Hero";
 import Nav from "../../common/components/Nav/Nav";
@@ -18,6 +19,10 @@ function Details() {
         <LoadingOverlay />
       ) : (
         <>
+          <Helmet>
+            <title>Punk Juice - {article.heroTitle}</title>
+          </Helmet>
+
           <header>
             <Hero article={article} />
           </header>
