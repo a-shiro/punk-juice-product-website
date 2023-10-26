@@ -31,7 +31,7 @@
 }
 
 .email {
-  margin: 1rem 0 5rem 0;
+  margin: 1rem 0 2rem 0;
 
   display: block;
 
@@ -48,6 +48,24 @@
   transition: color 0.5s;
   -webkit-transition: color 0.5s;
   -o-transition: color 0.5s;
+}
+
+.contributorsContainer {
+  margin-bottom: 5rem;
+
+  font-size: 1.15rem;
+}
+
+.contributorsContainer > span {
+  display: block;
+  margin-bottom: 0.5rem;
+
+  color: #ffffffa6;
+}
+
+.contributorsContainer a {
+  text-decoration: underline;
+  color: white;
 }
 
 .copyright {

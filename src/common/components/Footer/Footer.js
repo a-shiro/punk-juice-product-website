@@ -1,3 +1,5 @@
+// Components
+import { Link } from "react-router-dom";
 // CSS
 import styles from "./Footer.module.css";
 // Static files
@@ -17,6 +19,16 @@ function Footer() {
       </address>
 
       <span className={styles.email}>punkjuice@mail.com</span>
+
+      <div className={styles.contributorsContainer}>
+        <span className={styles.contributors}>
+          Digital Art by:{" "}
+          <Link to="https://linktr.ee/palahanski">Luchezar Palahanski</Link>
+        </span>
+        <span className={styles.coder}>
+          Code by: <Link to="https://github.com/a-shiro">Alek Mitov</Link>
+        </span>
+      </div>
 
       <ul className={styles.socials}>
         <li>
